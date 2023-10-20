@@ -16,7 +16,7 @@
     "version": "0.1.1",
     "scripts": {
         "generate-changelog": [
-            "php vendor/bin/conventional-changelog --commit --config=src/config/changelog.php"
+            "php vendor/bin/conventional-changelog --commit --config=./src/config/changelog.php"
         ]
     }
 }
