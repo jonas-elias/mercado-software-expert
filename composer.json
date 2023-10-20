@@ -11,12 +11,16 @@
         }
     ],
     "require-dev": {
-        "marcocesarato/php-conventional-changelog": "^1.17"
+        "marcocesarato/php-conventional-changelog": "^1.17",
+        "phpstan/phpstan": "^1.10"
     },
     "version": "0.2.0",
     "scripts": {
         "generate-changelog": [
             "php vendor/bin/conventional-changelog --commit --config=./src/config/changelog.php"
+        ],
+        "analyse": [
+            "vendor/bin/phpstan analyse ./src"
         ]
     }
 }
