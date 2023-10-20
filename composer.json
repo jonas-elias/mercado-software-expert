@@ -1,0 +1,17 @@
+{
+    "name": "jonaselias/expert-framework",
+    "autoload": {
+        "psr-4": {
+            "Jonaselias\\ExpertFramework\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jonas-elias"
+        }
+    ],
+    "require-dev": {
+        "marcocesarato/php-conventional-changelog": "^1.17"
+    },
+    "version": "1.0.0"
+}
