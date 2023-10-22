@@ -4,6 +4,15 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.4.0](https://github.com/jonas-elias/mercado-software-expert/compare/v0.3.0...v0.4.0) (2023-10-22)
+
+### Features
+
+* Injection dependencies interface controller ([403ec1](https://github.com/jonas-elias/mercado-software-expert/commit/403ec1c40dc7e577d01ba736fee97158d3854d54))
+
+
+---
+
 ## [0.3.0](https://github.com/jonas-elias/mercado-software-expert/compare/v0.2.9...v0.3.0) (2023-10-22)
 
 ### Features
