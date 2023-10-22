@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'path' => dirname(getcwd()) . '/../swagger.yaml',
+    'path' => dirname(getcwd()) . '/app/Controller',
 ];
