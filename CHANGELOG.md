@@ -4,6 +4,19 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.4.1](https://github.com/jonas-elias/mercado-software-expert/compare/v0.4.0...v0.4.1) (2023-10-22)
+
+### Builds
+
+* Composer config ([92c6f5](https://github.com/jonas-elias/mercado-software-expert/commit/92c6f51d965493af2aa06d0fd760c39af452f525))
+
+### Documentation
+
+* Initial doc controllers ([e940ca](https://github.com/jonas-elias/mercado-software-expert/commit/e940cad3d05b95e4d6f2d1e875bd86852167f3ee))
+
+
+---
+
 ## [0.4.0](https://github.com/jonas-elias/mercado-software-expert/compare/v0.3.0...v0.4.0) (2023-10-22)
 
 ### Features
