@@ -14,7 +14,7 @@
         "marcocesarato/php-conventional-changelog": "^1.17",
         "phpstan/phpstan": "^1.10"
     },
-    "version": "0.2.9",
+    "version": "0.3.0",
     "scripts": {
         "generate-changelog": [
             "php vendor/bin/conventional-changelog --commit"

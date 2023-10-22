@@ -4,6 +4,31 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.3.0](https://github.com/jonas-elias/mercado-software-expert/compare/v0.2.9...v0.3.0) (2023-10-22)
+
+### Features
+
+* Database config with component ([bd2a02](https://github.com/jonas-elias/mercado-software-expert/commit/bd2a026d4b33a6bd4a403c211a04ba68f32982bf))
+* Doc swagger ([b6ea03](https://github.com/jonas-elias/mercado-software-expert/commit/b6ea0387ab5dd7c30f7b8d4ddff6c789fecbc267))
+* Folder routes ([146235](https://github.com/jonas-elias/mercado-software-expert/commit/14623530e6ba56f29a099a02bbad88fd473c2a26))
+
+### Bug Fixes
+
+* Index.php dispatch routes ([cf5e06](https://github.com/jonas-elias/mercado-software-expert/commit/cf5e069b462d22b98335f45472df0da2c36f46a8))
+
+### Styles
+
+* Changelog config file ([f30646](https://github.com/jonas-elias/mercado-software-expert/commit/f30646acf33e84cead0b1869f50f8febf18c25ee))
+* Fix final space ([50924f](https://github.com/jonas-elias/mercado-software-expert/commit/50924f5d72c28f8c4072d6e36866a8fd10acdfa2))
+
+### Builds
+
+* Config files ([2d920f](https://github.com/jonas-elias/mercado-software-expert/commit/2d920f427beccdc81e4ad808cc29c135ce55f533))
+* Remove file ([1f99fc](https://github.com/jonas-elias/mercado-software-expert/commit/1f99fc8afe528cd4cf5825a671c60dc82d6a7d8f))
+
+
+---
+
 ## [0.2.9](https://github.com/jonas-elias/mercado-software-expert/compare/v0.2.8...v0.2.9) (2023-10-20)
 
 ### Bug Fixes
