@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1c474d4c96afa6ab5894881fba131ba",
+    "content-hash": "4fe606f96cacbdc2fba09914766d2742",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -272,16 +272,16 @@
         },
         {
             "name": "expert-framework/http",
-            "version": "v2.0.0",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonas-elias/expert-framework-http.git",
-                "reference": "7c84d5f87ebf53282ba211bfaae773788e45f32a"
+                "reference": "862644a0131ebf463e7f4ddfa468e3b2d5005bff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonas-elias/expert-framework-http/zipball/7c84d5f87ebf53282ba211bfaae773788e45f32a",
-                "reference": "7c84d5f87ebf53282ba211bfaae773788e45f32a",
+                "url": "https://api.github.com/repos/jonas-elias/expert-framework-http/zipball/862644a0131ebf463e7f4ddfa468e3b2d5005bff",
+                "reference": "862644a0131ebf463e7f4ddfa468e3b2d5005bff",
                 "shasum": ""
             },
             "type": "library",
@@ -302,9 +302,9 @@
             ],
             "support": {
                 "issues": "https://github.com/jonas-elias/expert-framework-http/issues",
-                "source": "https://github.com/jonas-elias/expert-framework-http/tree/v2.0.0"
+                "source": "https://github.com/jonas-elias/expert-framework-http/tree/v3.0.0"
             },
-            "time": "2023-10-22T17:17:31+00:00"
+            "time": "2023-10-22T20:04:17+00:00"
         },
         {
             "name": "psr/cache",
