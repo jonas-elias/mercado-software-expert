@@ -2,7 +2,7 @@
     "name": "jonaselias/expert-framework",
     "autoload": {
         "psr-4": {
-            "Jonaselias\\ExpertFramework\\": "src/"
+            "Jonaselias\\ExpertFramework\\": "src/app"
         }
     },
     "authors": [
@@ -22,5 +22,12 @@
         "analyse": [
             "vendor/bin/phpstan analyse ./src"
         ]
+    },
+    "require": {
+        "zircote/swagger-php": "^4.7",
+        "expert-framework/helpers": "^2.0",
+        "expert-framework/container": "^1.0",
+        "expert-framework/http": "^2.0",
+        "expert-framework/database": "^1.0"
     }
 }
