@@ -4,6 +4,25 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.8.0](https://github.com/jonas-elias/mercado-software-expert/compare/v0.7.0...v0.8.0) (2023-10-24)
+
+### Features
+
+* Routes api imposto ([e723af](https://github.com/jonas-elias/mercado-software-expert/commit/e723afaa3437d30e0e36c583f6b19576167ddfab))
+
+### Bug Fixes
+
+* Controller extends message function ([555550](https://github.com/jonas-elias/mercado-software-expert/commit/5555508a2de3d99940f3e7d938c849dcf5e0551f))
+* Validation produto module ([bf7343](https://github.com/jonas-elias/mercado-software-expert/commit/bf7343598484425891c1fad5712b4db050b90dbd))
+
+### Styles
+
+* Modules ([b290a6](https://github.com/jonas-elias/mercado-software-expert/commit/b290a65e6c5df4e208f271926d6165ddfa97e193))
+* Remove file ([209393](https://github.com/jonas-elias/mercado-software-expert/commit/20939397950fd812d7e05f70063db09c8f481866))
+
+
+---
+
 ## [0.7.0](https://github.com/jonas-elias/mercado-software-expert/compare/v0.6.0...v0.7.0) (2023-10-24)
 
 ### Features
