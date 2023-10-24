@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Jonaselias\ExpertFramework\Controller\Api\Produto;
 
+use ExpertFramework\Container\Container;
 use Jonaselias\ExpertFramework\Controller\Controller;
+use Jonaselias\ExpertFramework\Validation\Produto\ProdutoValidation;
+use Jonaselias\ExpertFramework\Repository\Produto\ProdutoRepository;
 
 /**
  * class ProdutoController
@@ -14,6 +17,29 @@ use Jonaselias\ExpertFramework\Controller\Controller;
  */
 class ProdutoController extends Controller
 {
+    /**
+     * @var ProdutoValidation $produtoValidation
+     */
+    protected ProdutoValidation $produtoValidation;
+
+    /**
+     * @var ProdutoRepository $produtoRepository
+     */
+    protected ProdutoRepository $produtoRepository;
+
+    /**
+     * Method constructor
+     *
+     * @param ProdutoValidation
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->produtoValidation = Container::get('Jonaselias\ExpertFramework\Validation\Produto\ProdutoValidation');
+        $this->produtoRepository = Container::get('Jonaselias\ExpertFramework\Repository\Produto\ProdutoRepository');
+    }
+
     /**
      * @OA\Post(
      *     path="/api/produto",
@@ -91,7 +117,20 @@ class ProdutoController extends Controller
      */
     public function insereProduto()
     {
+        $atributos = $this->request->body() ?? [];
 
+        try {
+            $this->produtoValidation->validaInsercao($atributos);
+            $this->produtoRepository->insereProduto($atributos);
+
+            $response = $this->constructCreatedMessage();
+        } catch (\InvalidArgumentException $iae) {
+            $response = $this->constructClientErrorResponse($iae->getMessage());
+        } catch (\Throwable $th) {
+            $response = $this->constructServerErrorResponse();
+        } finally {
+            return $this->response->json($response['response'], $response['statusCode']);
+        }
     }
 
     /**
@@ -142,7 +181,14 @@ class ProdutoController extends Controller
      */
     public function getProdutos()
     {
-
+        try {
+            $dados = $this->produtoRepository->getProdutos();
+            $response = $this->constructSuccessResponse($dados);
+        } catch (\Throwable $th) {
+            $response = $this->constructServerErrorResponse();
+        } finally {
+            return $this->response->json($response['response'], $response['statusCode']);
+        }
     }
 
     /**
@@ -222,7 +268,23 @@ class ProdutoController extends Controller
      */
     public function atualizaProduto(int $id)
     {
+        $atributos = $this->request->body() ?? [];
 
+        try {
+            $this->produtoValidation->validaAtualizacao($atributos, $id);
+            $this->produtoRepository->atualizaProduto($atributos, $id);
+
+            $response = $this->constructNoContentResponse();
+        } catch (\InvalidArgumentException $iae) {
+            $response = $this->constructClientErrorResponse($iae->getMessage());
+        } catch (\Throwable $th) {
+            $response = $this->constructServerErrorResponse();
+        } finally {
+            if (isset($response['response'])) {
+                return $this->response->json($response['response'], $response['statusCode']);
+            }
+            return $this->response->status($response['statusCode']);
+        }
     }
 
     /**
@@ -273,7 +335,19 @@ class ProdutoController extends Controller
      */
     public function getProdutoById(int $id)
     {
+        try {
+            $this->produtoValidation->validaProdutoById($id);
+            $produto = $this->produtoRepository->getProdutoById($id);
 
+            $response = $this->constructSuccessResponse($produto);
+        } catch (\InvalidArgumentException $iae) {
+            $response = $this->constructClientErrorResponse($iae->getMessage());
+        } catch (\Throwable $th) {
+            var_dump($th->getMessage());
+            $response = $this->constructServerErrorResponse();
+        } finally {
+            return $this->response->json($response['response'], $response['statusCode']);
+        }
     }
 
     /**
@@ -322,8 +396,22 @@ class ProdutoController extends Controller
      *     )
      * )
      */
-    public function deleteProduto()
+    public function deleteProdutoById(int $id)
     {
+        try {
+            $this->produtoValidation->validaProdutoById($id);
+            $this->produtoRepository->deletaProdutoById($id);
 
+            $response = $this->constructNoContentResponse();
+        } catch (\InvalidArgumentException $iae) {
+            $response = $this->constructClientErrorResponse($iae->getMessage());
+        } catch (\Throwable $th) {
+            $response = $this->constructServerErrorResponse();
+        } finally {
+            if (isset($response['response'])) {
+                return $this->response->json($response['response'], $response['statusCode']);
+            }
+            return $this->response->status($response['statusCode']);
+        }
     }
 }
