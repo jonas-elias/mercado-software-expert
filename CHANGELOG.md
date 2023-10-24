@@ -4,6 +4,15 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.7.0](https://github.com/jonas-elias/mercado-software-expert/compare/v0.6.0...v0.7.0) (2023-10-24)
+
+### Features
+
+* Imposto module ([6c6df3](https://github.com/jonas-elias/mercado-software-expert/commit/6c6df310dface02476a599df93bbf999e0bbb910))
+
+
+---
+
 ## [0.6.0](https://github.com/jonas-elias/mercado-software-expert/compare/v0.5.0...v0.6.0) (2023-10-24)
 
 ### Features
