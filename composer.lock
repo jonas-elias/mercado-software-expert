@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4fe606f96cacbdc2fba09914766d2742",
+    "content-hash": "c9c74a76d7f98d729b85e39fd6def024",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -197,16 +197,16 @@
         },
         {
             "name": "expert-framework/database",
-            "version": "v1.0.2",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonas-elias/expert-framework-database.git",
-                "reference": "fcafbef0e7f113ea17202c6a5ac004480d63c288"
+                "reference": "beed75faefb4c9d607aaea884b1012ad8f0ef28d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonas-elias/expert-framework-database/zipball/fcafbef0e7f113ea17202c6a5ac004480d63c288",
-                "reference": "fcafbef0e7f113ea17202c6a5ac004480d63c288",
+                "url": "https://api.github.com/repos/jonas-elias/expert-framework-database/zipball/beed75faefb4c9d607aaea884b1012ad8f0ef28d",
+                "reference": "beed75faefb4c9d607aaea884b1012ad8f0ef28d",
                 "shasum": ""
             },
             "require": {
@@ -230,9 +230,9 @@
             ],
             "support": {
                 "issues": "https://github.com/jonas-elias/expert-framework-database/issues",
-                "source": "https://github.com/jonas-elias/expert-framework-database/tree/v1.0.2"
+                "source": "https://github.com/jonas-elias/expert-framework-database/tree/v1.1.0"
             },
-            "time": "2023-10-22T17:23:47+00:00"
+            "time": "2023-10-23T22:41:21+00:00"
         },
         {
             "name": "expert-framework/helpers",
@@ -305,6 +305,45 @@
                 "source": "https://github.com/jonas-elias/expert-framework-http/tree/v3.0.0"
             },
             "time": "2023-10-22T20:04:17+00:00"
+        },
+        {
+            "name": "expert-framework/validation",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonas-elias/expert-framework-validation.git",
+                "reference": "92f6baec8b9c9dc1bc97d93ab5f340d57c793339"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonas-elias/expert-framework-validation/zipball/92f6baec8b9c9dc1bc97d93ab5f340d57c793339",
+                "reference": "92f6baec8b9c9dc1bc97d93ab5f340d57c793339",
+                "shasum": ""
+            },
+            "require": {
+                "expert-framework/database": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ExpertFramework\\Validation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonas Elias",
+                    "email": "jonasdasilvaelias@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/jonas-elias/expert-framework-validation/issues",
+                "source": "https://github.com/jonas-elias/expert-framework-validation/tree/v2.1.0"
+            },
+            "time": "2023-10-23T22:37:59+00:00"
         },
         {
             "name": "psr/cache",

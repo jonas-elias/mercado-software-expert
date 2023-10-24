@@ -28,6 +28,7 @@
         "expert-framework/helpers": "^2.0",
         "expert-framework/container": "^1.0",
         "expert-framework/http": "^3.0",
-        "expert-framework/database": "^1.0"
+        "expert-framework/database": "^1.0",
+        "expert-framework/validation": "^2.0"
     }
 }
