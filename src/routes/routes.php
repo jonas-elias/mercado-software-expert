@@ -21,4 +21,8 @@ Router::delete('/api/produto/{id}', 'Api\Produto\ProdutoController@deleteProduto
  * @api tipoProduto
  */
 Router::post('/api/tipoProduto', 'Api\Produto\TipoProdutoController@insereTipoProduto');
-Router::get('/api/tipoProduto', 'Api\Produto\TipoProdutoController@getTipoProduto');
+Router::get('/api/tipoProduto', 'Api\Produto\TipoProdutoController@getTiposProdutos');
+Router::put('/api/tipoProduto/{id}', 'Api\Produto\TipoProdutoController@atualizaTipoProduto');
+Router::get('/api/tipoProduto/{id}', 'Api\Produto\TipoProdutoController@getTipoProdutoById');
+Router::delete('/api/tipoProduto/{id}', 'Api\Produto\TipoProdutoController@deleteTipoProdutoById');
+
