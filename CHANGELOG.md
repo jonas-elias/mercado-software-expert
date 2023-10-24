@@ -4,6 +4,15 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.6.0](https://github.com/jonas-elias/mercado-software-expert/compare/v0.5.0...v0.6.0) (2023-10-24)
+
+### Features
+
+* Type product api ([183fe3](https://github.com/jonas-elias/mercado-software-expert/commit/183fe3582499c8d9e0b11168dce63e8d3ed014e1))
+
+
+---
+
 ## [0.5.0](https://github.com/jonas-elias/mercado-software-expert/compare/v0.4.1...v0.5.0) (2023-10-24)
 
 ### Features
