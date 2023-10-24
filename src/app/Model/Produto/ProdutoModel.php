@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Jonaselias\ExpertFramework\Model\Produto;
+
 use ExpertFramework\Database\BaseModel;
 
 /**
@@ -14,7 +15,7 @@ use ExpertFramework\Database\BaseModel;
 class ProdutoModel extends BaseModel
 {
     /**
-     * @var string $produto
+     * @var string $table
      */
     protected static string $table = 'produto';
 

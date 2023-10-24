@@ -120,7 +120,7 @@ class TipoProdutoController extends Controller
             $this->tipoProdutoValidation->validaInsercao($atributos);
             $this->tipoProdutoRepository->insereTipoProduto($atributos);
 
-            $response = $this->constructCreatedMessage();
+            $response = $this->constructCreatedMessageResponse();
         } catch (\InvalidArgumentException $iae) {
             $response = $this->constructClientErrorResponse($iae->getMessage());
         } catch (\Throwable $th) {
@@ -180,7 +180,7 @@ class TipoProdutoController extends Controller
     {
         try {
             $tiposProdutos = $this->tipoProdutoRepository->getTiposProdutos();
-            $response = $this->constructCreatedMessage($tiposProdutos);
+            $response = $this->constructCreatedMessageResponse($tiposProdutos);
         } catch (\InvalidArgumentException $iae) {
             $response = $this->constructClientErrorResponse($iae->getMessage());
         } catch (\Throwable $th) {
@@ -270,7 +270,6 @@ class TipoProdutoController extends Controller
         } catch (\InvalidArgumentException $iae) {
             $response = $this->constructClientErrorResponse($iae->getMessage());
         } catch (\Throwable $th) {
-            var_dump($th->getMessage());
             $response = $this->constructServerErrorResponse();
         } finally {
             if (isset($response['response'])) {
@@ -336,7 +335,6 @@ class TipoProdutoController extends Controller
         } catch (\InvalidArgumentException $iae) {
             $response = $this->constructClientErrorResponse($iae->getMessage());
         } catch (\Throwable $th) {
-            var_dump($th->getMessage());
             $response = $this->constructServerErrorResponse();
         } finally {
             return $this->response->json($response['response'], $response['statusCode']);
