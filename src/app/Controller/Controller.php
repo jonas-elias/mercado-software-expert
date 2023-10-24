@@ -61,7 +61,7 @@ class Controller
      * @param ?array $data
      * @return array
      */
-    protected function constructCreatedMessage(?array $data = []): array
+    protected function constructCreatedMessageResponse(?array $data = []): array
     {
         $response = [
             'status' => config('api.mensagens.sucesso.status'),
