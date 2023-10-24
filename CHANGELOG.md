@@ -4,6 +4,29 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.5.0](https://github.com/jonas-elias/mercado-software-expert/compare/v0.4.1...v0.5.0) (2023-10-24)
+
+### Features
+
+* Create function produtoController ([a7bd0d](https://github.com/jonas-elias/mercado-software-expert/commit/a7bd0dc0541a2977b9cc599cec054012ed5a6d8e))
+* Messages api ([a06784](https://github.com/jonas-elias/mercado-software-expert/commit/a067846f36124644b676e6d504c5b00af96c1bd6))
+* Message templates apis ([44752b](https://github.com/jonas-elias/mercado-software-expert/commit/44752b73ddf53e624a0daf7e07c90aa1a5c7ed6e))
+* Model table produto ([1b9a42](https://github.com/jonas-elias/mercado-software-expert/commit/1b9a4249ec73118e8ac8f9342f926f1e77ef6f7b))
+* Repository produto && tipo produto ([85589c](https://github.com/jonas-elias/mercado-software-expert/commit/85589ce57229ddd23476899cd1fb6e0eb234b531))
+* Routes produto ([fe9f19](https://github.com/jonas-elias/mercado-software-expert/commit/fe9f191977e65807c00854ead648a389a31e1d50))
+* Validation module produto && tipoProduto ([436f19](https://github.com/jonas-elias/mercado-software-expert/commit/436f1934e251c713321cda57b881938bd7fb755c))
+
+### Bug Fixes
+
+* Config fetch assoc ([a5cfb8](https://github.com/jonas-elias/mercado-software-expert/commit/a5cfb81a61eca5428afdac51aef96b3421bd2828))
+
+### Builds
+
+* Composer config ([871dcb](https://github.com/jonas-elias/mercado-software-expert/commit/871dcb4f684cd8321e415e21d3d2b3a0d331decc))
+
+
+---
+
 ## [0.4.1](https://github.com/jonas-elias/mercado-software-expert/compare/v0.4.0...v0.4.1) (2023-10-22)
 
 ### Builds
