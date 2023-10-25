@@ -109,7 +109,7 @@ class ImpostoController extends Controller
     {
         $body = $this->request->body();
         $atributos = [
-            'valor' => $body['valor'] ?? '',
+            'valor' => (float) ($body['valor'] ?? null),
             'id_tipo_produto' => $body['id_tipo_produto'] ?? '',
         ];
 

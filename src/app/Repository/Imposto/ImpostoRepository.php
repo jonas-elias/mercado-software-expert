@@ -50,7 +50,7 @@ class ImpostoRepository
     {
         return $this->impostoModel::table('imposto as i')
             ->join('tipo_produto as tp', 'i.id_tipo_produto', '=', 'tp.id')
-            ->select(['i.valor', 'tp.nome'])
+            ->select(['i.id', 'i.valor', 'tp.nome'])
             ->where('i.data_exclusao', '=', '0001-01-01')
             ->get();
     }

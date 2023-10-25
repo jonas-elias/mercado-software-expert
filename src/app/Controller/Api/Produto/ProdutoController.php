@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Jonaselias\ExpertFramework\Controller\Api\Produto;
 
 use ExpertFramework\Container\Container;
+use ExpertFramework\Http\Contract\ResponseInterface;
 use Jonaselias\ExpertFramework\Controller\Controller;
 use Jonaselias\ExpertFramework\Validation\Produto\ProdutoValidation;
 use Jonaselias\ExpertFramework\Repository\Produto\ProdutoRepository;
@@ -115,15 +116,20 @@ class ProdutoController extends Controller
      *     )
      * )
      */
-    public function insereProduto()
+    public function insereProduto(): ResponseInterface
     {
-        $atributos = $this->request->body() ?? [];
-
+        $body = $this->request->body() ?? [];
+        $atributos = [
+            'nome' => $body['nome'] ?? null,
+            'descricao' => $body['descricao'] ?? null,
+            'preco' => (float) ($body['preco'] ?? null),
+            'id_tipo_produto' => $body['id_tipo_produto'] ?? null,
+        ];
         try {
             $this->produtoValidation->validaInsercao($atributos);
             $this->produtoRepository->insereProduto($atributos);
 
-            $response = $this->constructCreatedMessage();
+            $response = $this->constructCreatedMessageResponse();
         } catch (\InvalidArgumentException $iae) {
             $response = $this->constructClientErrorResponse($iae->getMessage());
         } catch (\Throwable $th) {
@@ -179,7 +185,7 @@ class ProdutoController extends Controller
      *     )
      * )
      */
-    public function getProdutos()
+    public function getProdutos(): ResponseInterface
     {
         try {
             $dados = $this->produtoRepository->getProdutos();
@@ -266,10 +272,15 @@ class ProdutoController extends Controller
      *     )
      * )
      */
-    public function atualizaProduto(int $id)
+    public function atualizaProduto(int $id): ResponseInterface
     {
-        $atributos = $this->request->body() ?? [];
-
+        $body = $this->request->body() ?? [];
+        $atributos = [
+            'nome' => $body['nome'] ?? null,
+            'descricao' => $body['descricao'] ?? null,
+            'preco' => (float) ($body['preco'] ?? null),
+            'id_tipo_produto' => $body['id_tipo_produto'] ?? null,
+        ];
         try {
             $this->produtoValidation->validaAtualizacao($atributos, $id);
             $this->produtoRepository->atualizaProduto($atributos, $id);
@@ -333,7 +344,7 @@ class ProdutoController extends Controller
      *     )
      * )
      */
-    public function getProdutoById(int $id)
+    public function getProdutoById(int $id): ResponseInterface
     {
         try {
             $this->produtoValidation->validaProdutoById($id);
@@ -343,7 +354,6 @@ class ProdutoController extends Controller
         } catch (\InvalidArgumentException $iae) {
             $response = $this->constructClientErrorResponse($iae->getMessage());
         } catch (\Throwable $th) {
-            var_dump($th->getMessage());
             $response = $this->constructServerErrorResponse();
         } finally {
             return $this->response->json($response['response'], $response['statusCode']);
@@ -396,7 +406,7 @@ class ProdutoController extends Controller
      *     )
      * )
      */
-    public function deleteProdutoById(int $id)
+    public function deleteProdutoById(int $id): ResponseInterface
     {
         try {
             $this->produtoValidation->validaProdutoById($id);

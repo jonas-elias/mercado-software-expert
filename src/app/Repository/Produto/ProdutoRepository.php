@@ -6,6 +6,7 @@ namespace Jonaselias\ExpertFramework\Repository\Produto;
 
 use ExpertFramework\Container\Container;
 use Jonaselias\ExpertFramework\Model\Produto\ProdutoModel;
+use Jonaselias\ExpertFramework\Trait\Produto\ProdutoTrait;
 
 /**
  * class ProdutoRepository
@@ -15,6 +16,8 @@ use Jonaselias\ExpertFramework\Model\Produto\ProdutoModel;
  */
 class ProdutoRepository
 {
+    use ProdutoTrait;
+
     /**
      * @var ProdutoModel $produtoModel
      */
@@ -71,7 +74,23 @@ class ProdutoRepository
      */
     public function getProdutoById(int $id): array
     {
-        return $this->produtoModel::find($id);
+        $produto = $this->produtoModel::table('produto as p')
+            ->select([
+                'p.id',
+                'p.preco',
+                'i.valor as imposto_porcentagem',
+                '((i.valor / 100) * p.preco) as valor_imposto',
+                '(((i.valor / 100) * p.preco) + p.preco) as total',
+                'p.id_tipo_produto',
+                'p.nome',
+                'p.descricao'
+            ])
+            ->join('tipo_produto as tp', 'p.id_tipo_produto', '=', 'tp.id')
+            ->join('imposto as i', 'tp.id', '=', 'i.id_tipo_produto', 'LEFT JOIN')
+            ->where('p.id', '=', $id)
+            ->get()[0] ?? [];
+
+        return [$this->formatCasasDecimaisProduto($produto)];
     }
 
     /**
