@@ -4,6 +4,15 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.9.1](https://github.com/jonas-elias/mercado-software-expert/compare/v0.9.0...v0.9.1) (2023-10-25)
+
+### Bug Fixes
+
+* Query with soft delete wheres ([e9cfd3](https://github.com/jonas-elias/mercado-software-expert/commit/e9cfd3dd2e66de71eb0f923dcf26ff95e77f5f03))
+
+
+---
+
 ## [0.9.0](https://github.com/jonas-elias/mercado-software-expert/compare/v0.8.0...v0.9.0) (2023-10-25)
 
 ### Features
