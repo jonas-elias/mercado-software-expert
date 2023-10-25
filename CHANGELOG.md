@@ -4,6 +4,21 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.9.0](https://github.com/jonas-elias/mercado-software-expert/compare/v0.8.0...v0.9.0) (2023-10-25)
+
+### Features
+
+* New routes venda | itemVenda ([5f44c7](https://github.com/jonas-elias/mercado-software-expert/commit/5f44c75423842fde6fe8aa140a0524e539f64327))
+* Repository father with transaction functions ([ffe8f8](https://github.com/jonas-elias/mercado-software-expert/commit/ffe8f83e0e3090d6d008a984f54835bcb461593e))
+* Venda item && venda module implementation ([c8b255](https://github.com/jonas-elias/mercado-software-expert/commit/c8b2552ed930d518ba1d029073a4620a960d06df))
+
+### Bug Fixes
+
+* Controllers && repositories ([9c0ad9](https://github.com/jonas-elias/mercado-software-expert/commit/9c0ad973e566b53e2cfd97010869ba6b184b1ade))
+
+
+---
+
 ## [0.8.0](https://github.com/jonas-elias/mercado-software-expert/compare/v0.7.0...v0.8.0) (2023-10-24)
 
 ### Features
