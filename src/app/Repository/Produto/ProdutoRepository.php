@@ -51,7 +51,11 @@ class ProdutoRepository
      */
     public function getProdutos(): array
     {
-        return $this->produtoModel::all();
+        return $this->produtoModel::table('produto as p')
+            ->join('tipo_produto as tp', 'p.id_tipo_produto', '=', 'tp.id')
+            ->where('p.data_exclusao', '=', '0001-01-01')
+            ->where('tp.data_exclusao', '=', '0001-01-01')
+            ->get();
     }
 
     /**
