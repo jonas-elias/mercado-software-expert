@@ -4,6 +4,16 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.0.3](https://github.com/jonas-elias/mercado-software-expert/compare/v0.0.2...v0.0.3) (2023-10-25)
+
+### Bug Fixes
+
+* Delete method produto module ([b07583](https://github.com/jonas-elias/mercado-software-expert/commit/b07583b82e4a64a763008c5eada1ac77958eb796))
+* Produto delete ([08418e](https://github.com/jonas-elias/mercado-software-expert/commit/08418e4f2bdfae86bd9e9cff0d05ba76961dca0e))
+
+
+---
+
 ## [0.0.2](https://github.com/jonas-elias/mercado-software-expert/compare/v0.0.1...v0.0.2) (2023-10-25)
 
 
