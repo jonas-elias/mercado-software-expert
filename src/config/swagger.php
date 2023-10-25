@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'path' => dirname(getcwd()) . '/app/Controller',
+    'path' => dirname(getcwd()).'/app/Controller',
 ];

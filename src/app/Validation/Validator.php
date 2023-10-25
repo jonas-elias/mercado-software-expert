@@ -6,20 +6,19 @@ use ExpertFramework\Container\Container;
 use ExpertFramework\Validation\Validation;
 
 /**
- * class Validator
+ * class Validator.
  *
- * @package Jonaselias\ExpertFramework\Validation\Produto
  * @author jonas-elias
  */
 class Validator
 {
     /**
-     * @var Validation $validator
+     * @var Validation
      */
     protected Validation $validator;
 
     /**
-     * Method constructor
+     * Method constructor.
      *
      * @return void
      */

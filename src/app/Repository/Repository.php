@@ -8,20 +8,19 @@ use ExpertFramework\Container\Contract\ContainerInterface;
 use ExpertFramework\Database\Database;
 
 /**
- * class Repository
+ * class Repository.
  *
- * @package Jonaselias\ExpertFramework\Repository
  * @author jonas-elias
  */
 class Repository
 {
     /**
-     * @var Database $database
+     * @var Database
      */
     protected Database $database;
 
     /**
-     * Method constructor
+     * Method constructor.
      *
      * @return void
      */
@@ -31,7 +30,7 @@ class Repository
     }
 
     /**
-     * Method to begin PDO transaction
+     * Method to begin PDO transaction.
      *
      * @return void
      */
@@ -41,7 +40,7 @@ class Repository
     }
 
     /**
-     * Method to commit transaction
+     * Method to commit transaction.
      *
      * @return void
      */
@@ -51,7 +50,7 @@ class Repository
     }
 
     /**
-     * Method to rollback transaction
+     * Method to rollback transaction.
      *
      * @return void
      */

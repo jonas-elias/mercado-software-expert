@@ -7,31 +7,31 @@ namespace Jonaselias\ExpertFramework\Controller\Api\Produto;
 use ExpertFramework\Container\Contract\ContainerInterface;
 use ExpertFramework\Http\Contract\ResponseInterface;
 use Jonaselias\ExpertFramework\Controller\Controller;
-use Jonaselias\ExpertFramework\Validation\Produto\ProdutoValidation;
 use Jonaselias\ExpertFramework\Repository\Produto\ProdutoRepository;
+use Jonaselias\ExpertFramework\Validation\Produto\ProdutoValidation;
 
 /**
- * class ProdutoController
+ * class ProdutoController.
  *
- * @package Jonaselias\ExpertFramework\Controller\Api
  * @author jonas-elias
  */
 class ProdutoController extends Controller
 {
     /**
-     * @var ProdutoValidation $produtoValidation
+     * @var ProdutoValidation
      */
     protected ProdutoValidation $produtoValidation;
 
     /**
-     * @var ProdutoRepository $produtoRepository
+     * @var ProdutoRepository
      */
     protected ProdutoRepository $produtoRepository;
 
     /**
-     * Method constructor
+     * Method constructor.
      *
      * @param ProdutoValidation
+     *
      * @return void
      */
     public function __construct(protected ContainerInterface $container)
@@ -51,12 +51,16 @@ class ProdutoController extends Controller
      *     tags={"produto"},
      *     summary="Insere o produto no banco de dados.",
      *     operationId="insereProduto",
+     *
      *     @OA\RequestBody(
      *         description="Formato de envio",
+     *
      *         @OA\MediaType(
      *             mediaType="application/json",
+     *
      *             @OA\Schema(
      *                 type="object",
+     *
      *                 @OA\Property(
      *                     property="nome",
      *                     description="Nome do produto",
@@ -80,11 +84,15 @@ class ProdutoController extends Controller
      *             )
      *         ),
      *     ),
+     *
      *     @OA\Response(
      *         response=201,
      *         description="Created",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "sucesso", "mensagem": "Operação bem-sucedida.", "dados": {}},
@@ -92,11 +100,15 @@ class ProdutoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=400,
      *         description="Bad request",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "erro", "mensagem": "Requisição inválida.", "dados": {}, "detalhes_erro": {}},
@@ -104,11 +116,15 @@ class ProdutoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=500,
      *         description="Server error",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={
@@ -124,11 +140,12 @@ class ProdutoController extends Controller
     {
         $body = $this->request->body() ?? [];
         $atributos = [
-            'nome' => $body['nome'] ?? null,
-            'descricao' => $body['descricao'] ?? null,
-            'preco' => (float) ($body['preco'] ?? null),
+            'nome'            => $body['nome'] ?? null,
+            'descricao'       => $body['descricao'] ?? null,
+            'preco'           => (float) ($body['preco'] ?? null),
             'id_tipo_produto' => $body['id_tipo_produto'] ?? null,
         ];
+
         try {
             $this->produtoValidation->validaInsercao($atributos);
             $this->produtoRepository->insereProduto($atributos);
@@ -149,11 +166,15 @@ class ProdutoController extends Controller
      *     tags={"produto"},
      *     summary="Recupera os produtos do mercado.",
      *     operationId="getProdutos",
+     *
      *     @OA\Response(
      *         response=200,
      *         description="OK",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "sucesso", "mensagem": "Operação bem-sucedida.", "dados": {}},
@@ -161,11 +182,15 @@ class ProdutoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=400,
      *         description="Bad request",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "erro", "mensagem": "Requisição inválida.", "dados": {}, "detalhes_erro": {}},
@@ -173,11 +198,15 @@ class ProdutoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=500,
      *         description="Server error",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={
@@ -207,12 +236,16 @@ class ProdutoController extends Controller
      *     tags={"produto"},
      *     summary="Atualiza o produto no banco de dados.",
      *     operationId="atualizaProduto",
+     *
      *     @OA\RequestBody(
      *         description="Formato de envio",
+     *
      *         @OA\MediaType(
      *             mediaType="application/json",
+     *
      *             @OA\Schema(
      *                 type="object",
+     *
      *                 @OA\Property(
      *                     property="nome",
      *                     description="Nome do produto",
@@ -236,11 +269,15 @@ class ProdutoController extends Controller
      *             )
      *         ),
      *     ),
+     *
      *     @OA\Response(
      *         response=204,
      *         description="No Content",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={},
@@ -248,11 +285,15 @@ class ProdutoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=400,
      *         description="Bad request",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "erro", "mensagem": "Requisição inválida.", "dados": {}, "detalhes_erro": {}},
@@ -260,11 +301,15 @@ class ProdutoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=500,
      *         description="Server error",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={
@@ -280,11 +325,12 @@ class ProdutoController extends Controller
     {
         $body = $this->request->body() ?? [];
         $atributos = [
-            'nome' => $body['nome'] ?? null,
-            'descricao' => $body['descricao'] ?? null,
-            'preco' => (float) ($body['preco'] ?? null),
+            'nome'            => $body['nome'] ?? null,
+            'descricao'       => $body['descricao'] ?? null,
+            'preco'           => (float) ($body['preco'] ?? null),
             'id_tipo_produto' => $body['id_tipo_produto'] ?? null,
         ];
+
         try {
             $this->produtoValidation->validaAtualizacao($atributos, $id);
             $this->produtoRepository->atualizaProduto($atributos, $id);
@@ -298,6 +344,7 @@ class ProdutoController extends Controller
             if (isset($response['response'])) {
                 return $this->response->json($response['response'], $response['statusCode']);
             }
+
             return $this->response->status($response['statusCode']);
         }
     }
@@ -308,11 +355,15 @@ class ProdutoController extends Controller
      *     tags={"produto"},
      *     summary="Recupera um produto específico do banco de dados.",
      *     operationId="getProdutoById",
+     *
      *     @OA\Response(
      *         response=200,
      *         description="OK",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "sucesso", "mensagem": "Operação bem-sucedida.", "dados": {}},
@@ -320,11 +371,15 @@ class ProdutoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=400,
      *         description="Bad request",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "erro", "mensagem": "Requisição inválida.", "dados": {}, "detalhes_erro": {}},
@@ -332,11 +387,15 @@ class ProdutoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=500,
      *         description="Server error",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={
@@ -370,11 +429,15 @@ class ProdutoController extends Controller
      *     tags={"produto"},
      *     summary="Remove um produto específico do banco de dados.",
      *     operationId="deleteProduto",
+     *
      *     @OA\Response(
      *         response=204,
      *         description="No Content",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={},
@@ -382,11 +445,15 @@ class ProdutoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=400,
      *         description="Bad request",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "erro", "mensagem": "Requisição inválida.", "dados": {}, "detalhes_erro": {}},
@@ -394,11 +461,15 @@ class ProdutoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=500,
      *         description="Server error",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={
@@ -425,6 +496,7 @@ class ProdutoController extends Controller
             if (isset($response['response'])) {
                 return $this->response->json($response['response'], $response['statusCode']);
             }
+
             return $this->response->status($response['statusCode']);
         }
     }

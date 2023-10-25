@@ -10,25 +10,24 @@ use Jonaselias\ExpertFramework\Repository\Venda\ItemVendaRepository;
 use Jonaselias\ExpertFramework\Validation\Venda\ItemVendaValidation;
 
 /**
- * class ItemVendaController
+ * class ItemVendaController.
  *
- * @package Jonaselias\ExpertFramework\Controller\Api
  * @author jonas-elias
  */
 class ItemVendaController extends Controller
 {
     /**
-     * @var ItemVendaValidation $itemVendaValidation
+     * @var ItemVendaValidation
      */
     protected ItemVendaValidation $itemVendaValidation;
 
     /**
-     * @var ItemVendaRepository $itemVendaRepository
+     * @var ItemVendaRepository
      */
     protected ItemVendaRepository $itemVendaRepository;
 
     /**
-     * Method constructor
+     * Method constructor.
      *
      * @return void
      */
@@ -49,12 +48,16 @@ class ItemVendaController extends Controller
      *     tags={"venda"},
      *     summary="Insere os itens da venda no banco de dados.",
      *     operationId="insereItensVenda",
+     *
      *     @OA\RequestBody(
      *     description="Formato de envio",
+     *
      *     @OA\MediaType(
      *         mediaType="application/json",
+     *
      *         @OA\Schema(
      *             type="object",
+     *
      *             @OA\Property(
      *                 property="venda",
      *                 type="object",
@@ -95,11 +98,15 @@ class ItemVendaController extends Controller
      *         ),
      *     ),
      *  ),
+     *
      *     @OA\Response(
      *         response=201,
      *         description="Created",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "sucesso", "mensagem": "Operação bem-sucedida.", "dados": {}},
@@ -107,11 +114,15 @@ class ItemVendaController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=400,
      *         description="Bad request",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "erro", "mensagem": "Requisição inválida.", "dados": {}, "detalhes_erro": {}},
@@ -119,11 +130,15 @@ class ItemVendaController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=500,
      *         description="Server error",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={
@@ -141,9 +156,10 @@ class ItemVendaController extends Controller
         $atributos = [
             'venda' => [
                 'total_impostos' => (float) ($body['venda']['total_impostos'] ?? null),
-                'total_venda' => (float) ($body['venda']['total_venda'] ?? null),
+                'total_venda'    => (float) ($body['venda']['total_venda'] ?? null),
             ],
         ];
+
         try {
             $this->itemVendaRepository->begin();
             $this->itemVendaValidation->validaInsercaoVenda($atributos['venda']);

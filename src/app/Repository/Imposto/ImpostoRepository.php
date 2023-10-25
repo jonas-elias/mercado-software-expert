@@ -9,20 +9,19 @@ use Jonaselias\ExpertFramework\Model\Imposto\ImpostoModel;
 use Jonaselias\ExpertFramework\Repository\Repository;
 
 /**
- * class ImpostoRepository
+ * class ImpostoRepository.
  *
- * @package Jonaselias\ExpertFramework\Repository
  * @author jonas-elias
  */
 class ImpostoRepository extends Repository
 {
     /**
-     * @var ImpostoModel $impostoModel
+     * @var ImpostoModel
      */
     protected ImpostoModel $impostoModel;
 
     /**
-     * Method constructor
+     * Method constructor.
      *
      * @return void
      */
@@ -33,9 +32,10 @@ class ImpostoRepository extends Repository
     }
 
     /**
-     * Method to insert imposto
+     * Method to insert imposto.
      *
      * @param array $atributos
+     *
      * @return void
      */
     public function insereImposto(array $atributos): void
@@ -44,7 +44,7 @@ class ImpostoRepository extends Repository
     }
 
     /**
-     * Method to get imposto
+     * Method to get imposto.
      *
      * @return array
      */
@@ -58,10 +58,11 @@ class ImpostoRepository extends Repository
     }
 
     /**
-     * Method to update imposto
+     * Method to update imposto.
      *
      * @param array $atributos
-     * @param int $id
+     * @param int   $id
+     *
      * @return array
      */
     public function atualizaImposto(array $atributos, int $id): void
@@ -70,7 +71,7 @@ class ImpostoRepository extends Repository
     }
 
     /**
-     * Method to get imposto by id
+     * Method to get imposto by id.
      *
      * @param int $id
      * @param array
@@ -81,9 +82,10 @@ class ImpostoRepository extends Repository
     }
 
     /**
-     * Method to delete imposto by id (soft delete)
+     * Method to delete imposto by id (soft delete).
      *
      * @param int $id
+     *
      * @return void
      */
     public function deletaImpostoById(int $id): void

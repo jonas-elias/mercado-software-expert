@@ -8,20 +8,19 @@ use ExpertFramework\Container\Contract\ContainerInterface;
 use Jonaselias\ExpertFramework\Model\Venda\ItemVendaModel;
 
 /**
- * class ItemVendaRepository
+ * class ItemVendaRepository.
  *
- * @package Jonaselias\ExpertFramework\Repository\Venda
  * @author jonas-elias
  */
 class ItemVendaRepository extends VendaRepository
 {
     /**
-     * @var ItemVendaModel $itemVendaModel
+     * @var ItemVendaModel
      */
     protected ItemVendaModel $itemVendaModel;
 
     /**
-     * Method constructor
+     * Method constructor.
      *
      * @return void
      */
@@ -32,9 +31,10 @@ class ItemVendaRepository extends VendaRepository
     }
 
     /**
-     * Method to insert venda
+     * Method to insert venda.
      *
      * @param array $atributos
+     *
      * @return void
      */
     public function insereItemVenda(array $atributos): void
@@ -45,7 +45,7 @@ class ItemVendaRepository extends VendaRepository
     }
 
     /**
-     * Method to get vendas
+     * Method to get vendas.
      *
      * @return array
      */

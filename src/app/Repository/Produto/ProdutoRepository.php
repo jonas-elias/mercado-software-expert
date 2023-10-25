@@ -10,9 +10,8 @@ use Jonaselias\ExpertFramework\Repository\Repository;
 use Jonaselias\ExpertFramework\Trait\Produto\ProdutoTrait;
 
 /**
- * class ProdutoRepository
+ * class ProdutoRepository.
  *
- * @package Jonaselias\ExpertFramework\Repository
  * @author jonas-elias
  */
 class ProdutoRepository extends Repository
@@ -20,12 +19,12 @@ class ProdutoRepository extends Repository
     use ProdutoTrait;
 
     /**
-     * @var ProdutoModel $produtoModel
+     * @var ProdutoModel
      */
     protected ProdutoModel $produtoModel;
 
     /**
-     * Method constructor
+     * Method constructor.
      *
      * @return void
      */
@@ -36,9 +35,10 @@ class ProdutoRepository extends Repository
     }
 
     /**
-     * Method to insert product
+     * Method to insert product.
      *
      * @param array $atributos
+     *
      * @return void
      */
     public function insereProduto(array $atributos): void
@@ -47,7 +47,7 @@ class ProdutoRepository extends Repository
     }
 
     /**
-     * Method to get produtos
+     * Method to get produtos.
      *
      * @return array
      */
@@ -61,10 +61,11 @@ class ProdutoRepository extends Repository
     }
 
     /**
-     * Method to update product
+     * Method to update product.
      *
      * @param array $atributos
-     * @param int $id
+     * @param int   $id
+     *
      * @return array
      */
     public function atualizaProduto(array $atributos, int $id): void
@@ -73,7 +74,7 @@ class ProdutoRepository extends Repository
     }
 
     /**
-     * Method to get produto by id
+     * Method to get produto by id.
      *
      * @param int $id
      * @param array
@@ -89,7 +90,7 @@ class ProdutoRepository extends Repository
                 '(((i.valor / 100) * p.preco) + p.preco) as total',
                 'p.id_tipo_produto',
                 'p.nome',
-                'p.descricao'
+                'p.descricao',
             ])
             ->join('tipo_produto as tp', 'p.id_tipo_produto', '=', 'tp.id')
             ->join('imposto as i', 'tp.id', '=', 'i.id_tipo_produto', 'LEFT JOIN')
@@ -102,9 +103,10 @@ class ProdutoRepository extends Repository
     }
 
     /**
-     * Method to delete product by id (soft delete)
+     * Method to delete product by id (soft delete).
      *
      * @param int $id
+     *
      * @return void
      */
     public function deletaProdutoById(int $id): void

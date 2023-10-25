@@ -25,6 +25,7 @@ class ProdutoRepositoryTest extends TestCase
 
         $produtoModel->shouldReceive('create')->with(['dados' => 'dados'])->andReturnUsing(function () {
             $this->assertTrue(true);
+
             return true;
         });
         $container->shouldReceive('get')->with('Jonaselias\ExpertFramework\Model\Produto\ProdutoModel')
@@ -34,7 +35,7 @@ class ProdutoRepositoryTest extends TestCase
 
         $produtoRepository = new ProdutoRepository($container);
         $produtoRepository->insereProduto([
-            'dados' => 'dados'
+            'dados' => 'dados',
         ]);
     }
 
@@ -48,6 +49,7 @@ class ProdutoRepositoryTest extends TestCase
 
         $produtoModel->shouldReceive('update')->with(['dados' => 'dados'], $id)->andReturnUsing(function () {
             $this->assertTrue(true);
+
             return true;
         });
         $container->shouldReceive('get')->with('Jonaselias\ExpertFramework\Model\Produto\ProdutoModel')
@@ -68,21 +70,25 @@ class ProdutoRepositoryTest extends TestCase
 
         $produtoModel->shouldReceive('table')->with('produto as p')->andReturnUsing(function () use ($queryBuilder) {
             $this->assertTrue(true);
+
             return $queryBuilder;
         });
         $queryBuilder->shouldReceive('join')->with('tipo_produto as tp', 'p.id_tipo_produto', '=', 'tp.id')
             ->andReturnUsing(function () use ($queryBuilder) {
                 $this->assertTrue(true);
+
                 return $queryBuilder;
             });
         $queryBuilder->shouldReceive('where')->with('p.data_exclusao', '=', '0001-01-01')
             ->andReturnUsing(function () use ($queryBuilder) {
                 $this->assertTrue(true);
+
                 return $queryBuilder;
             });
         $queryBuilder->shouldReceive('where')->with('tp.data_exclusao', '=', '0001-01-01')
             ->andReturnUsing(function () use ($queryBuilder) {
                 $this->assertTrue(true);
+
                 return $queryBuilder;
             });
         $queryBuilder->shouldReceive('get')->andReturn([]);
@@ -106,6 +112,7 @@ class ProdutoRepositoryTest extends TestCase
 
         $produtoModel->shouldReceive('table')->with('produto as p')->andReturnUsing(function () use ($queryBuilder) {
             $this->assertTrue(true);
+
             return $queryBuilder;
         });
         $queryBuilder->shouldReceive('select')->with([
@@ -116,34 +123,40 @@ class ProdutoRepositoryTest extends TestCase
             '(((i.valor / 100) * p.preco) + p.preco) as total',
             'p.id_tipo_produto',
             'p.nome',
-            'p.descricao'
+            'p.descricao',
         ])->andReturnUsing(function () use ($queryBuilder) {
             $this->assertTrue(true);
+
             return $queryBuilder;
         });
         $queryBuilder->shouldReceive('join')->with('tipo_produto as tp', 'p.id_tipo_produto', '=', 'tp.id')
             ->andReturnUsing(function () use ($queryBuilder) {
                 $this->assertTrue(true);
+
                 return $queryBuilder;
             });
         $queryBuilder->shouldReceive('join')->with('imposto as i', 'tp.id', '=', 'i.id_tipo_produto', 'LEFT JOIN')
             ->andReturnUsing(function () use ($queryBuilder) {
                 $this->assertTrue(true);
+
                 return $queryBuilder;
             });
         $queryBuilder->shouldReceive('where')->with('p.data_exclusao', '=', '0001-01-01')
             ->andReturnUsing(function () use ($queryBuilder) {
                 $this->assertTrue(true);
+
                 return $queryBuilder;
             });
         $queryBuilder->shouldReceive('where')->with('tp.data_exclusao', '=', '0001-01-01')
             ->andReturnUsing(function () use ($queryBuilder) {
                 $this->assertTrue(true);
+
                 return $queryBuilder;
             });
         $queryBuilder->shouldReceive('where')->with('p.id', '=', $id)
             ->andReturnUsing(function () use ($queryBuilder) {
                 $this->assertTrue(true);
+
                 return $queryBuilder;
             });
         $queryBuilder->shouldReceive('get')->andReturn([]);
@@ -166,6 +179,7 @@ class ProdutoRepositoryTest extends TestCase
 
         $produtoModel->shouldReceive('update')->andReturnUsing(function () {
             $this->assertTrue(true);
+
             return true;
         });
         $container->shouldReceive('get')->with('Jonaselias\ExpertFramework\Model\Produto\ProdutoModel')

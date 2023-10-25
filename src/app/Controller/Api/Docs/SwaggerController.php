@@ -12,7 +12,7 @@ use Jonaselias\ExpertFramework\Controller\Controller;
 class SwaggerController extends Controller
 {
     /**
-     * Method constructor
+     * Method constructor.
      *
      * @return void
      */
@@ -27,6 +27,7 @@ class SwaggerController extends Controller
      *     summary="Lista o yaml para carregar a documentação swagger.",
      *     operationId="yaml",
      *     tags={"doc"},
+     *
      *     @OA\Response(
      *         response=200,
      *         description="Yaml contendo a documentação especificada da aplicação."
@@ -42,11 +43,12 @@ class SwaggerController extends Controller
         $path = config('swagger.path');
 
         $openapi = \OpenApi\Generator::scan([$path]);
+
         return $this->response->yaml($openapi->toYaml());
     }
 
     /**
-     * Method to get doc swagger
+     * Method to get doc swagger.
      *
      * @return string
      */
