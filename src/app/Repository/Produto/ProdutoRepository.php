@@ -54,7 +54,7 @@ class ProdutoRepository extends Repository
     public function getProdutos(): array
     {
         return $this->produtoModel::table('produto as p')
-            ->select(['p.id', 'p.nome', 'p.descricao', 'tp.id', 'p.preco', 'p.data_exclusao'])
+            ->select(['p.id', 'p.nome', 'p.descricao', 'tp.id as id_tipo_produto', 'p.preco', 'p.data_exclusao'])
             ->join('tipo_produto as tp', 'p.id_tipo_produto', '=', 'tp.id')
             ->where('p.data_exclusao', '=', '0001-01-01')
             ->where('tp.data_exclusao', '=', '0001-01-01')
