@@ -296,7 +296,7 @@ class ImpostoController extends Controller
     {
         $body = $this->request->body() ?? [];
         $atributos = [
-            'valor' => $body['valor'] ?? null,
+            'valor' => (float) ($body['valor'] ?? null),
         ];
 
         try {
