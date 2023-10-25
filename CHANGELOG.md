@@ -4,6 +4,19 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.9.2](https://github.com/jonas-elias/mercado-software-expert/compare/v0.9.1...v0.9.2) (2023-10-25)
+
+### Bug Fixes
+
+* Loading container in dispatcher and container module ([d036ce](https://github.com/jonas-elias/mercado-software-expert/commit/d036ce0f0cb4bb85d80f62c3a95eefc5ee2eb983))
+
+### Tests
+
+* Add tests phpunit ([88d6d4](https://github.com/jonas-elias/mercado-software-expert/commit/88d6d45c269065a9bccab4fbc919711c614b88dc))
+
+
+---
+
 ## [0.9.1](https://github.com/jonas-elias/mercado-software-expert/compare/v0.9.0...v0.9.1) (2023-10-25)
 
 ### Bug Fixes
