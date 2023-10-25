@@ -4,6 +4,11 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.0.1](https://github.com/jonas-elias/mercado-software-expert/compare/0.0.0...v0.0.1) (2023-10-25)
+
+
+---
+
 ## [0.9.2](https://github.com/jonas-elias/mercado-software-expert/compare/v0.9.1...v0.9.2) (2023-10-25)
 
 ### Bug Fixes
