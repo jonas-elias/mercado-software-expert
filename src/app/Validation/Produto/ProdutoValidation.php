@@ -21,7 +21,7 @@ class ProdutoValidation extends Validator
         'descricao'       => 'required|string|max:255',
         'preco'           => 'required|float',
         'id_tipo_produto' => 'required|notExists:tipo_produto,id',
-        'id'              => 'required|notExists:produto,id|softDelete:tipo_produto,id,data_exclusao,0001-01-01',
+        'id'              => 'required|notExists:produto,id|exists:itens_venda,id_produto',
     ];
 
     /**

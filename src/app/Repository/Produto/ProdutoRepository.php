@@ -112,6 +112,6 @@ class ProdutoRepository extends Repository
      */
     public function deletaProdutoById(int $id): void
     {
-        $this->produtoModel::update(['data_exclusao' => date('Y-m-d H:i:s')], $id);
+        $this->produtoModel::destroy($id);
     }
 }
