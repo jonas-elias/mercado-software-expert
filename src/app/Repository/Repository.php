@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Jonaselias\ExpertFramework\Repository;
 
-use ExpertFramework\Container\Container;
+use ExpertFramework\Container\Contract\ContainerInterface;
 use ExpertFramework\Database\Database;
 
 /**
@@ -25,9 +25,9 @@ class Repository
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(protected ContainerInterface $container)
     {
-        $this->database = Container::get('ExpertFramework\Database\Database');
+        $this->database = $this->container::get('ExpertFramework\Database\Database');
     }
 
     /**

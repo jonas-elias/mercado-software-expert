@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Jonaselias\ExpertFramework\Controller\Api\Imposto;
 
 use ExpertFramework\Container\Container;
+use ExpertFramework\Container\Contract\ContainerInterface;
 use ExpertFramework\Http\Contract\ResponseInterface;
 use Jonaselias\ExpertFramework\Controller\Controller;
 use Jonaselias\ExpertFramework\Validation\Imposto\ImpostoValidation;
@@ -33,11 +34,15 @@ class ImpostoController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(protected ContainerInterface $container)
     {
-        parent::__construct();
-        $this->impostoValidation = Container::get('Jonaselias\ExpertFramework\Validation\Imposto\ImpostoValidation');
-        $this->impostoRepository = Container::get('Jonaselias\ExpertFramework\Repository\Imposto\ImpostoRepository');
+        parent::__construct($this->container);
+        $this->impostoValidation = $this->container::get(
+            'Jonaselias\ExpertFramework\Validation\Imposto\ImpostoValidation'
+        );
+        $this->impostoRepository = $this->container::get(
+            'Jonaselias\ExpertFramework\Repository\Imposto\ImpostoRepository'
+        );
     }
 
     /**

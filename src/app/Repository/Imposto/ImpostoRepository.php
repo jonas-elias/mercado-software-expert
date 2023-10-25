@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Jonaselias\ExpertFramework\Repository\Imposto;
 
-use ExpertFramework\Container\Container;
+use ExpertFramework\Container\Contract\ContainerInterface;
 use Jonaselias\ExpertFramework\Model\Imposto\ImpostoModel;
+use Jonaselias\ExpertFramework\Repository\Repository;
 
 /**
  * class ImpostoRepository
@@ -13,7 +14,7 @@ use Jonaselias\ExpertFramework\Model\Imposto\ImpostoModel;
  * @package Jonaselias\ExpertFramework\Repository
  * @author jonas-elias
  */
-class ImpostoRepository
+class ImpostoRepository extends Repository
 {
     /**
      * @var ImpostoModel $impostoModel
@@ -25,9 +26,10 @@ class ImpostoRepository
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(protected ContainerInterface $container)
     {
-        $this->impostoModel = Container::get('Jonaselias\ExpertFramework\Model\Imposto\ImpostoModel');
+        parent::__construct($this->container);
+        $this->impostoModel = $this->container::get('Jonaselias\ExpertFramework\Model\Imposto\ImpostoModel');
     }
 
     /**

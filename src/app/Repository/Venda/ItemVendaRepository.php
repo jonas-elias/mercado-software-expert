@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Jonaselias\ExpertFramework\Repository\Venda;
 
-use ExpertFramework\Container\Container;
+use ExpertFramework\Container\Contract\ContainerInterface;
 use Jonaselias\ExpertFramework\Model\Venda\ItemVendaModel;
 
 /**
@@ -25,10 +25,10 @@ class ItemVendaRepository extends VendaRepository
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(protected ContainerInterface $container)
     {
-        parent::__construct();
-        $this->itemVendaModel = Container::get('Jonaselias\ExpertFramework\Model\Venda\ItemVendaModel');
+        parent::__construct($this->container);
+        $this->itemVendaModel = $this->container::get('Jonaselias\ExpertFramework\Model\Venda\ItemVendaModel');
     }
 
     /**

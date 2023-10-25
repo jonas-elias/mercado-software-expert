@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Jonaselias\ExpertFramework\Repository\Produto;
 
-use ExpertFramework\Container\Container;
+use ExpertFramework\Container\Contract\ContainerInterface;
 use Jonaselias\ExpertFramework\Model\Produto\ProdutoModel;
+use Jonaselias\ExpertFramework\Repository\Repository;
 use Jonaselias\ExpertFramework\Trait\Produto\ProdutoTrait;
 
 /**
@@ -14,7 +15,7 @@ use Jonaselias\ExpertFramework\Trait\Produto\ProdutoTrait;
  * @package Jonaselias\ExpertFramework\Repository
  * @author jonas-elias
  */
-class ProdutoRepository
+class ProdutoRepository extends Repository
 {
     use ProdutoTrait;
 
@@ -28,9 +29,10 @@ class ProdutoRepository
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(protected ContainerInterface $container)
     {
-        $this->produtoModel = Container::get('Jonaselias\ExpertFramework\Model\Produto\ProdutoModel');
+        parent::__construct($this->container);
+        $this->produtoModel = $this->container::get('Jonaselias\ExpertFramework\Model\Produto\ProdutoModel');
     }
 
     /**
@@ -92,6 +94,8 @@ class ProdutoRepository
             ->join('tipo_produto as tp', 'p.id_tipo_produto', '=', 'tp.id')
             ->join('imposto as i', 'tp.id', '=', 'i.id_tipo_produto', 'LEFT JOIN')
             ->where('p.id', '=', $id)
+            ->where('p.data_exclusao', '=', '0001-01-01')
+            ->where('tp.data_exclusao', '=', '0001-01-01')
             ->get()[0] ?? [];
 
         return [$this->formatCasasDecimaisProduto($produto)];

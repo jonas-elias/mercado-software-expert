@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Jonaselias\ExpertFramework\Controller\Api\Produto;
 
-use ExpertFramework\Container\Container;
+use ExpertFramework\Container\Contract\ContainerInterface;
 use ExpertFramework\Http\Contract\ResponseInterface;
 use Jonaselias\ExpertFramework\Controller\Controller;
 use Jonaselias\ExpertFramework\Repository\Produto\TipoProdutoRepository;
@@ -33,13 +33,13 @@ class TipoProdutoController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(protected ContainerInterface $container)
     {
-        parent::__construct();
-        $this->tipoProdutoValidation = Container::get(
+        parent::__construct($this->container);
+        $this->tipoProdutoValidation = $this->container::get(
             'Jonaselias\ExpertFramework\Validation\Produto\TipoProdutoValidation'
         );
-        $this->tipoProdutoRepository = Container::get(
+        $this->tipoProdutoRepository = $this->container::get(
             'Jonaselias\ExpertFramework\Repository\Produto\TipoProdutoRepository'
         );
     }

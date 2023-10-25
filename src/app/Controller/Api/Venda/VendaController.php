@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Jonaselias\ExpertFramework\Controller\Api\Venda;
 
-use ExpertFramework\Container\Container;
+use ExpertFramework\Container\Contract\ContainerInterface;
 use ExpertFramework\Http\Contract\ResponseInterface;
 use Jonaselias\ExpertFramework\Controller\Controller;
 use Jonaselias\ExpertFramework\Repository\Venda\VendaRepository;
@@ -33,11 +33,11 @@ class VendaController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(protected ContainerInterface $container)
     {
-        parent::__construct();
-        $this->vendaValidation = Container::get('Jonaselias\ExpertFramework\Validation\Venda\VendaValidation');
-        $this->vendaRepository = Container::get('Jonaselias\ExpertFramework\Repository\Venda\VendaRepository');
+        parent::__construct($this->container);
+        $this->vendaValidation = $this->container::get('Jonaselias\ExpertFramework\Validation\Venda\VendaValidation');
+        $this->vendaRepository = $this->container::get('Jonaselias\ExpertFramework\Repository\Venda\VendaRepository');
     }
 
     /**

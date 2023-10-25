@@ -2,8 +2,9 @@
 
 namespace Jonaselias\ExpertFramework\Repository\Produto;
 
-use ExpertFramework\Container\Container;
+use ExpertFramework\Container\Contract\ContainerInterface;
 use Jonaselias\ExpertFramework\Model\Produto\TipoProdutoModel;
+use Jonaselias\ExpertFramework\Repository\Repository;
 
 /**
  * class TipoProdutoRepository
@@ -11,7 +12,7 @@ use Jonaselias\ExpertFramework\Model\Produto\TipoProdutoModel;
  * @package Jonaselias\ExpertFramework\Repository\Produto
  * @author jonas-elias
  */
-class TipoProdutoRepository
+class TipoProdutoRepository extends Repository
 {
     /**
      * @var TipoProdutoModel $tipoProdutoModel
@@ -23,9 +24,10 @@ class TipoProdutoRepository
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(protected ContainerInterface $container)
     {
-        $this->tipoProdutoModel = Container::get('Jonaselias\ExpertFramework\Model\Produto\TipoProdutoModel');
+        parent::__construct($this->container);
+        $this->tipoProdutoModel = $this->container::get('Jonaselias\ExpertFramework\Model\Produto\TipoProdutoModel');
     }
 
     /**

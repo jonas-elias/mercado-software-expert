@@ -3,6 +3,11 @@
     "autoload": {
         "psr-4": {
             "Jonaselias\\ExpertFramework\\": "src/app"
+        },
+        "autoload-dev": {
+            "psr-4": {
+                "Jonaselias\\ExpertFramework\\Tests\\": "tests/"
+            }
         }
     },
     "authors": [
@@ -12,7 +17,9 @@
     ],
     "require-dev": {
         "marcocesarato/php-conventional-changelog": "^1.17",
-        "phpstan/phpstan": "^1.10"
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^10.4",
+        "mockery/mockery": "^1.6"
     },
     "version": "0.9.1",
     "scripts": {

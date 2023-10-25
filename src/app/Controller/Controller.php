@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Jonaselias\ExpertFramework\Controller;
 
-use ExpertFramework\Container\Container;
+use ExpertFramework\Container\Contract\ContainerInterface;
 use ExpertFramework\Http\Contract\RequestInterface;
 use ExpertFramework\Http\Contract\ResponseInterface;
 
@@ -31,10 +31,10 @@ class Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(protected ContainerInterface $container)
     {
-        $this->response = Container::get('ExpertFramework\Http\Response');
-        $this->request = Container::get('ExpertFramework\Http\Request');
+        $this->response = $this->container::get('ExpertFramework\Http\Response');
+        $this->request = $this->container::get('ExpertFramework\Http\Request');
     }
 
     /**

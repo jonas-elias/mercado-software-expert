@@ -2,6 +2,7 @@
 
 namespace Jonaselias\ExpertFramework\Controller\Api\Docs;
 
+use ExpertFramework\Container\Contract\ContainerInterface;
 use ExpertFramework\Http\Contract\ResponseInterface;
 use Jonaselias\ExpertFramework\Controller\Controller;
 
@@ -15,9 +16,9 @@ class SwaggerController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(protected ContainerInterface $container)
     {
-        parent::__construct();
+        parent::__construct($this->container);
     }
 
     /**
