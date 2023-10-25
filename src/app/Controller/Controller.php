@@ -9,25 +9,24 @@ use ExpertFramework\Http\Contract\RequestInterface;
 use ExpertFramework\Http\Contract\ResponseInterface;
 
 /**
- * class Controller
+ * class Controller.
  *
- * @package Jonaselias\ExpertFramework\Controller
  * @author jonas-elias
  */
 class Controller
 {
     /**
-     * @var ResponseInterface $response
+     * @var ResponseInterface
      */
     public ResponseInterface $response;
 
     /**
-     * @var RequestInterface $request
+     * @var RequestInterface
      */
     public RequestInterface $request;
 
     /**
-     * Method constructor
+     * Method constructor.
      *
      * @return void
      */
@@ -38,17 +37,18 @@ class Controller
     }
 
     /**
-     * Method to construct success response
+     * Method to construct success response.
      *
      * @param ?array $data
+     *
      * @return array
      */
     protected function constructSuccessResponse(?array $data = []): array
     {
         $response = [
-            'status' => config('api.mensagens.sucesso.status'),
+            'status'   => config('api.mensagens.sucesso.status'),
             'mensagem' => config('api.mensagens.sucesso.mensagem'),
-            'dados' => $data
+            'dados'    => $data,
         ];
         $statusCode = 200;
 
@@ -56,17 +56,18 @@ class Controller
     }
 
     /**
-     * Method to construct created message
+     * Method to construct created message.
      *
      * @param ?array $data
+     *
      * @return array
      */
     protected function constructCreatedMessageResponse(?array $data = []): array
     {
         $response = [
-            'status' => config('api.mensagens.sucesso.status'),
+            'status'   => config('api.mensagens.sucesso.status'),
             'mensagem' => config('api.mensagens.sucesso.mensagem'),
-            'dados' => $data
+            'dados'    => $data,
         ];
         $statusCode = 201;
 
@@ -74,7 +75,7 @@ class Controller
     }
 
     /**
-     * Method to construct no content response
+     * Method to construct no content response.
      *
      * @return array
      */
@@ -86,18 +87,19 @@ class Controller
     }
 
     /**
-     * Method to construct client error message
+     * Method to construct client error message.
      *
      * @param string $errorMessage
+     *
      * @return array
      */
     protected function constructClientErrorResponse(string $errorMessage): array
     {
         $response = [
-            'status' => config('api.mensagens.erro_cliente.status'),
-            'mensagem' => config('api.mensagens.erro_cliente.mensagem'),
-            'dados' => [],
-            'detalhes_erro' => json_decode($errorMessage, true)
+            'status'        => config('api.mensagens.erro_cliente.status'),
+            'mensagem'      => config('api.mensagens.erro_cliente.mensagem'),
+            'dados'         => [],
+            'detalhes_erro' => json_decode($errorMessage, true),
         ];
         $statusCode = 400;
 
@@ -105,17 +107,17 @@ class Controller
     }
 
     /**
-     * Method to construct server error response
+     * Method to construct server error response.
      *
      * @return array
      */
     protected function constructServerErrorResponse(): array
     {
         $response = [
-            'status' => config('api.mensagens.erro_interno.status'),
-            'mensagem' => config('api.mensagens.erro_interno.mensagem'),
-            'dados' => [],
-            'detalhes_erro' => []
+            'status'        => config('api.mensagens.erro_interno.status'),
+            'mensagem'      => config('api.mensagens.erro_interno.mensagem'),
+            'dados'         => [],
+            'detalhes_erro' => [],
         ];
         $statusCode = 500;
 

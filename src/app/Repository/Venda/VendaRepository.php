@@ -9,20 +9,19 @@ use Jonaselias\ExpertFramework\Model\Venda\VendaModel;
 use Jonaselias\ExpertFramework\Repository\Repository;
 
 /**
- * class VendaRepository
+ * class VendaRepository.
  *
- * @package Jonaselias\ExpertFramework\Repository\Venda
  * @author jonas-elias
  */
 class VendaRepository extends Repository
 {
     /**
-     * @var VendaModel $vendaModel
+     * @var VendaModel
      */
     protected VendaModel $vendaModel;
 
     /**
-     * Method constructor
+     * Method constructor.
      *
      * @return void
      */
@@ -33,9 +32,10 @@ class VendaRepository extends Repository
     }
 
     /**
-     * Method to insert venda
+     * Method to insert venda.
      *
      * @param array $atributos
+     *
      * @return void
      */
     public function insereVenda(array $atributos): void
@@ -44,9 +44,10 @@ class VendaRepository extends Repository
     }
 
     /**
-     * Method to insert venda and get id
+     * Method to insert venda and get id.
      *
      * @param array $atributos
+     *
      * @return int
      */
     public function insereVendaGetId(array $atributos): int
@@ -55,7 +56,7 @@ class VendaRepository extends Repository
     }
 
     /**
-     * Method to get vendas
+     * Method to get vendas.
      *
      * @return array
      */

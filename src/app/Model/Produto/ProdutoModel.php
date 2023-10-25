@@ -7,27 +7,26 @@ namespace Jonaselias\ExpertFramework\Model\Produto;
 use ExpertFramework\Database\BaseModel;
 
 /**
- * class ProdutoModel
+ * class ProdutoModel.
  *
- * @package Jonaselias\ExpertFramework\Model
  * @author jonas-elias
  */
 class ProdutoModel extends BaseModel
 {
     /**
-     * @var string $table
+     * @var string
      */
     protected static string $table = 'produto';
 
     /**
-     * @var array $columns
+     * @var array
      */
     protected static array $columns = ['*'];
 
     /**
-     * @var array $conditionEqual
+     * @var array
      */
     protected static array $conditionEqual = [
-        'data_exclusao' => '0001-01-01'
+        'data_exclusao' => '0001-01-01',
     ];
 }

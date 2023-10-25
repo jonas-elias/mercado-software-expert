@@ -7,27 +7,26 @@ namespace Jonaselias\ExpertFramework\Model\Imposto;
 use ExpertFramework\Database\BaseModel;
 
 /**
- * class ImpostoModel
+ * class ImpostoModel.
  *
- * @package Jonaselias\ExpertFramework\Model
  * @author jonas-elias
  */
 class ImpostoModel extends BaseModel
 {
     /**
-     * @var string $table
+     * @var string
      */
     protected static string $table = 'imposto';
 
     /**
-     * @var array $columns
+     * @var array
      */
     protected static array $columns = ['*'];
 
     /**
-     * @var array $conditionEqual
+     * @var array
      */
     protected static array $conditionEqual = [
-        'data_exclusao' => '0001-01-01'
+        'data_exclusao' => '0001-01-01',
     ];
 }

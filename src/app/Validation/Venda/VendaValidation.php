@@ -7,34 +7,35 @@ namespace Jonaselias\ExpertFramework\Validation\Venda;
 use Jonaselias\ExpertFramework\Validation\Validator;
 
 /**
- * class VendaValidation
+ * class VendaValidation.
  *
- * @package Jonaselias\ExpertFramework\Validation
  * @author jonas-elias
  */
 class VendaValidation extends Validator
 {
     /**
-     * @var array $rules
+     * @var array
      */
     private array $rules = [
         'total_impostos' => 'required|float',
-        'total_venda' => 'required|float',
-        'id' => 'required|notExists:venda,id',
+        'total_venda'    => 'required|float',
+        'id'             => 'required|notExists:venda,id',
     ];
 
     /**
-     * validate insert venda
+     * validate insert venda.
      *
      * @param ?array $atributos
-     * @return void
+     *
      * @throws \InvalidArgumentException
+     *
+     * @return void
      */
     public function validaInsercaoVenda(?array $atributos): void
     {
         $regras = [
             'total_impostos' => $this->rules['total_impostos'],
-            'total_venda' => $this->rules['total_venda'],
+            'total_venda'    => $this->rules['total_venda'],
         ];
 
         $this->validator->validate($atributos, $regras);
@@ -45,18 +46,20 @@ class VendaValidation extends Validator
     }
 
     /**
-     * validate update venda
+     * validate update venda.
      *
      * @param ?array $atributos
-     * @param ?int $id
-     * @return void
+     * @param ?int   $id
+     *
      * @throws \InvalidArgumentException
+     *
+     * @return void
      */
     public function validaAtualizacao(?array $atributos, ?int $id): void
     {
         $regras = [
             'total_impostos' => $this->rules['total_impostos'],
-            'total_compra' => $this->rules['total_compra'],
+            'total_compra'   => $this->rules['total_compra'],
         ];
 
         $this->validator->validate(array_merge($atributos, ['id' => $id]), $regras);
@@ -67,11 +70,13 @@ class VendaValidation extends Validator
     }
 
     /**
-     * Method to validate id venda
+     * Method to validate id venda.
      *
      * @param int $id
-     * @return void
+     *
      * @throws \InvalidArgumentException
+     *
+     * @return void
      */
     public function validaProdutoById(?int $id): void
     {

@@ -3,14 +3,14 @@
 namespace Jonaselias\ExpertFramework\Model;
 
 /**
- * class Model
- * @package Jonaselias\ExpertFramework\Model
+ * class Model.
+ *
  * @author jonas-elias
  */
 class Model
 {
     /**
-     * Method constructor
+     * Method constructor.
      *
      * @return void
      */

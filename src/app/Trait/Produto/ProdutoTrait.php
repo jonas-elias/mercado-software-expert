@@ -3,19 +3,19 @@
 namespace Jonaselias\ExpertFramework\Trait\Produto;
 
 /**
- * trait ProdutoTrait
+ * trait ProdutoTrait.
  *
  * class ProdutoTrait
  *
- * @package Jonaselias\ExpertFramework\Trait
  * @author jonas-elias
  */
 trait ProdutoTrait
 {
     /**
-     * Method to format inputs produto
+     * Method to format inputs produto.
      *
      * @param array $produto
+     *
      * @return array
      */
     public function formatCasasDecimaisProduto(array $produto): array

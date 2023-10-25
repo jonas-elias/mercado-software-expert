@@ -4,33 +4,31 @@ declare(strict_types=1);
 
 namespace Jonaselias\ExpertFramework\Controller\Api\Imposto;
 
-use ExpertFramework\Container\Container;
 use ExpertFramework\Container\Contract\ContainerInterface;
 use ExpertFramework\Http\Contract\ResponseInterface;
 use Jonaselias\ExpertFramework\Controller\Controller;
-use Jonaselias\ExpertFramework\Validation\Imposto\ImpostoValidation;
 use Jonaselias\ExpertFramework\Repository\Imposto\ImpostoRepository;
+use Jonaselias\ExpertFramework\Validation\Imposto\ImpostoValidation;
 
 /**
- * class ImpostoController
+ * class ImpostoController.
  *
- * @package Jonaselias\ExpertFramework\Controller\Api
  * @author jonas-elias
  */
 class ImpostoController extends Controller
 {
     /**
-     * @var ImpostoValidation $impostoValidation
+     * @var ImpostoValidation
      */
     protected ImpostoValidation $impostoValidation;
 
     /**
-     * @var ImpostoRepository $impostoRepository
+     * @var ImpostoRepository
      */
     protected ImpostoRepository $impostoRepository;
 
     /**
-     * Method constructor
+     * Method constructor.
      *
      * @return void
      */
@@ -51,12 +49,16 @@ class ImpostoController extends Controller
      *     tags={"imposto"},
      *     summary="Insere o percentual de imposto atrelado ao tipo de produto.",
      *     operationId="insereImposto",
+     *
      *     @OA\RequestBody(
      *         description="Formato de envio",
+     *
      *         @OA\MediaType(
      *             mediaType="application/json",
+     *
      *             @OA\Schema(
      *                 type="object",
+     *
      *                 @OA\Property(
      *                     property="valor",
      *                     description="Percentual de imposto (formato = 10 para 10%, 20 para 20%, ...)",
@@ -70,11 +72,15 @@ class ImpostoController extends Controller
      *             )
      *         ),
      *     ),
+     *
      *     @OA\Response(
      *         response=201,
      *         description="Created",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "sucesso", "mensagem": "Operação bem-sucedida.", "dados": {}},
@@ -82,11 +88,15 @@ class ImpostoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=400,
      *         description="Bad request",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "erro", "mensagem": "Requisição inválida.", "dados": {}, "detalhes_erro": {}},
@@ -94,11 +104,15 @@ class ImpostoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=500,
      *         description="Server error",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={
@@ -114,7 +128,7 @@ class ImpostoController extends Controller
     {
         $body = $this->request->body();
         $atributos = [
-            'valor' => (float) ($body['valor'] ?? null),
+            'valor'           => (float) ($body['valor'] ?? null),
             'id_tipo_produto' => $body['id_tipo_produto'] ?? '',
         ];
 
@@ -138,11 +152,15 @@ class ImpostoController extends Controller
      *     tags={"imposto"},
      *     summary="Recupera o imposto dos tipos de produto.",
      *     operationId="getImpostos",
+     *
      *     @OA\Response(
      *         response=200,
      *         description="OK",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "sucesso", "mensagem": "Operação bem-sucedida.", "dados": {}},
@@ -150,11 +168,15 @@ class ImpostoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=400,
      *         description="Bad request",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "erro", "mensagem": "Requisição inválida.", "dados": {}, "detalhes_erro": {}},
@@ -162,11 +184,15 @@ class ImpostoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=500,
      *         description="Server error",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={
@@ -196,12 +222,16 @@ class ImpostoController extends Controller
      *     tags={"imposto"},
      *     summary="Atualiza o imposto no banco de dados.",
      *     operationId="atualizaImposto",
+     *
      *     @OA\RequestBody(
      *         description="Formato de envio",
+     *
      *         @OA\MediaType(
      *             mediaType="application/json",
+     *
      *             @OA\Schema(
      *                 type="object",
+     *
      *                 @OA\Property(
      *                     property="valor",
      *                     description="Percentual de imposto (formato = 10 para 10%, 20 para 20%, ...)",
@@ -210,11 +240,15 @@ class ImpostoController extends Controller
      *             )
      *         ),
      *     ),
+     *
      *     @OA\Response(
      *         response=204,
      *         description="No Content",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={},
@@ -222,11 +256,15 @@ class ImpostoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=400,
      *         description="Bad request",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "erro", "mensagem": "Requisição inválida.", "dados": {}, "detalhes_erro": {}},
@@ -234,11 +272,15 @@ class ImpostoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=500,
      *         description="Server error",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={
@@ -270,6 +312,7 @@ class ImpostoController extends Controller
             if (isset($response['response'])) {
                 return $this->response->json($response['response'], $response['statusCode']);
             }
+
             return $this->response->status($response['statusCode']);
         }
     }
@@ -280,11 +323,15 @@ class ImpostoController extends Controller
      *     tags={"imposto"},
      *     summary="Recupera um imposto específico do banco de dados.",
      *     operationId="getImpostoById",
+     *
      *     @OA\Response(
      *         response=200,
      *         description="OK",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "sucesso", "mensagem": "Operação bem-sucedida.", "dados": {}},
@@ -292,11 +339,15 @@ class ImpostoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=400,
      *         description="Bad request",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "erro", "mensagem": "Requisição inválida.", "dados": {}, "detalhes_erro": {}},
@@ -304,11 +355,15 @@ class ImpostoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=500,
      *         description="Server error",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={
@@ -342,11 +397,15 @@ class ImpostoController extends Controller
      *     tags={"imposto"},
      *     summary="Remove um imposto específico do banco de dados.",
      *     operationId="deleteImpostoById",
+     *
      *     @OA\Response(
      *         response=204,
      *         description="No Content",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={},
@@ -354,11 +413,15 @@ class ImpostoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=400,
      *         description="Bad request",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={"status": "erro", "mensagem": "Requisição inválida.", "dados": {}, "detalhes_erro": {}},
@@ -366,11 +429,15 @@ class ImpostoController extends Controller
      *              ),
      *          )
      *     ),
+     *
      *     @OA\Response(
      *         response=500,
      *         description="Server error",
+     *
      *         @OA\JsonContent(
+     *
      *              @OA\Schema(type="string"),
+     *
      *              @OA\Examples(
      *                  example="string",
      *                  value={
@@ -397,6 +464,7 @@ class ImpostoController extends Controller
             if (isset($response['response'])) {
                 return $this->response->json($response['response'], $response['statusCode']);
             }
+
             return $this->response->status($response['statusCode']);
         }
     }

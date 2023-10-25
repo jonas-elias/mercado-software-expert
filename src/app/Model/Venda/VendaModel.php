@@ -7,20 +7,19 @@ namespace Jonaselias\ExpertFramework\Model\Venda;
 use ExpertFramework\Database\BaseModel;
 
 /**
- * class VendaModel
+ * class VendaModel.
  *
- * @package Jonaselias\ExpertFramework\Model\Venda
  * @author jonas-elias
  */
 class VendaModel extends BaseModel
 {
     /**
-     * @var string $table
+     * @var string
      */
     protected static string $table = 'venda';
 
     /**
-     * @var array $columns
+     * @var array
      */
     protected static array $columns = ['*'];
 }
