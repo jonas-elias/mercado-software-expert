@@ -34,3 +34,10 @@ Router::get('/api/imposto', 'Api\Imposto\ImpostoController@getImpostos');
 Router::put('/api/imposto/{id}', 'Api\Imposto\ImpostoController@atualizaImposto');
 Router::get('/api/imposto/{id}', 'Api\Imposto\ImpostoController@getImpostoById');
 Router::delete('/api/imposto/{id}', 'Api\Imposto\ImpostoController@deleteImpostoById');
+
+/**
+ * @api venda | itemVenda
+ */
+Router::post('/api/venda', 'Api\Venda\VendaController@insereVenda');
+Router::get('/api/venda', 'Api\Venda\VendaController@getVendas');
+Router::post('/api/itemVenda', 'Api\Venda\ItemVendaController@insereItensVenda');
