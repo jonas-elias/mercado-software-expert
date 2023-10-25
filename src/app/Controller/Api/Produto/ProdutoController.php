@@ -484,7 +484,7 @@ class ProdutoController extends Controller
     public function deleteProdutoById(int $id): ResponseInterface
     {
         try {
-            $this->produtoValidation->validaProdutoById($id);
+            $this->produtoValidation->validaDeleteById($id);
             $this->produtoRepository->deletaProdutoById($id);
 
             $response = $this->constructNoContentResponse();

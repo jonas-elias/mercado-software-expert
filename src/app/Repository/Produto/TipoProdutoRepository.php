@@ -85,6 +85,6 @@ class TipoProdutoRepository extends Repository
      */
     public function deletaTipoProdutoById(int $id): void
     {
-        $this->tipoProdutoModel::update(['data_exclusao' => date('Y-m-d H:i:s')], $id);
+        $this->tipoProdutoModel::destroy($id);
     }
 }

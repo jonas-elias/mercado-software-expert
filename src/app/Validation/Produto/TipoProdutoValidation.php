@@ -17,9 +17,10 @@ class TipoProdutoValidation extends Validator
      * @var array
      */
     protected array $rules = [
-        'nome'      => 'required|string|max:255',
+        'nome' => 'required|string|max:255',
         'descricao' => 'required|string|max:255',
-        'id'        => 'required|notExists:tipo_produto,id|softDelete:tipo_produto,id,data_exclusao,0001-01-01',
+        'id' => 'required|notExists:tipo_produto,id',
+        'id_delete' => 'required|notExists:tipo_produto,id|exists:imposto,id_tipo_produto|exists:produto,id_tipo_produto',
     ];
 
     /**
@@ -34,7 +35,7 @@ class TipoProdutoValidation extends Validator
     public function validaInsercao(?array $atributos): void
     {
         $regras = [
-            'nome'      => $this->rules['nome'],
+            'nome' => $this->rules['nome'],
             'descricao' => $this->rules['descricao'],
         ];
 
@@ -58,9 +59,9 @@ class TipoProdutoValidation extends Validator
     public function validaAtualizacao(array $atributos, ?int $id): void
     {
         $regras = [
-            'nome'      => $this->rules['nome'],
+            'nome' => $this->rules['nome'],
             'descricao' => $this->rules['descricao'],
-            'id'        => $this->rules['id'],
+            'id' => $this->rules['id'],
         ];
 
         $this->validator->validate(array_merge($atributos, ['id' => $id]), $regras);
@@ -71,7 +72,7 @@ class TipoProdutoValidation extends Validator
     }
 
     /**
-     * Method to validate update type product.
+     * Method to validate tipo id type product.
      *
      * @param ?int $id
      *
@@ -83,6 +84,28 @@ class TipoProdutoValidation extends Validator
     {
         $regras = [
             'id' => $this->rules['id'],
+        ];
+
+        $this->validator->validate(['id' => $id], $regras);
+
+        if ($this->validator->fails()) {
+            throw new \InvalidArgumentException(json_encode($this->validator->errors()));
+        }
+    }
+
+    /**
+     * Method to validate delete by id type product.
+     *
+     * @param ?int $id
+     *
+     * @throws \InvalidArgumentException
+     *
+     * @return void
+     */
+    public function validaDeleteById(?int $id): void
+    {
+        $regras = [
+            'id' => $this->rules['id_delete'],
         ];
 
         $this->validator->validate(['id' => $id], $regras);
