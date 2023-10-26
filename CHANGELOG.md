@@ -4,6 +4,20 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.0.6](https://github.com/jonas-elias/mercado-software-expert/compare/v0.0.5...v0.0.6) (2023-10-26)
+
+### Code Refactoring
+
+* Phpstan code && style ([f4fa2c](https://github.com/jonas-elias/mercado-software-expert/commit/f4fa2c3bea956bdbcabfd832a800a91eaa44afbf))
+
+### Tests
+
+* Module imposto ([34ee7f](https://github.com/jonas-elias/mercado-software-expert/commit/34ee7f997eb80683c119973f4a34d9807d9f6155))
+* Module vendas ([2e3eb1](https://github.com/jonas-elias/mercado-software-expert/commit/2e3eb1088384f17bde4012d0691de773ca6c1ff8))
+
+
+---
+
 ## [0.0.5](https://github.com/jonas-elias/mercado-software-expert/compare/v0.0.4...v0.0.5) (2023-10-26)
 
 ### Bug Fixes
