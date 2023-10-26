@@ -17,9 +17,9 @@ class ImpostoValidation extends Validator
      * @var array
      */
     protected array $rules = [
-        'valor' => 'required|float',
+        'valor'           => 'required|float',
         'id_tipo_produto' => 'required|notExists:tipo_produto,id|exists:imposto,id_tipo_produto',
-        'id' => 'required|notExists:imposto,id',
+        'id'              => 'required|notExists:imposto,id',
     ];
 
     /**

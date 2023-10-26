@@ -28,6 +28,7 @@ class ItemVendaRepositoryTest extends TestCase
 
         $itemVendaModel->shouldReceive('create')->with($data[0])->andReturnUsing(function () {
             $this->assertTrue(true);
+
             return true;
         });
 

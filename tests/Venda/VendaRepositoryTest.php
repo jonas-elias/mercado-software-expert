@@ -24,6 +24,7 @@ class VendaRepositoryTest extends TestCase
 
         $vendaModel->shouldReceive('create')->with(['dados' => 'dados'])->andReturnUsing(function () {
             $this->assertTrue(true);
+
             return true;
         });
         $container->shouldReceive('get')->with('Jonaselias\ExpertFramework\Model\Venda\VendaModel')
@@ -45,6 +46,7 @@ class VendaRepositoryTest extends TestCase
 
         $vendaModel->shouldReceive('insertGetId')->with(['dados' => 'dados'])->andReturnUsing(function () {
             $this->assertTrue(true);
+
             return 1;
         });
         $container->shouldReceive('get')->with('Jonaselias\ExpertFramework\Model\Venda\VendaModel')

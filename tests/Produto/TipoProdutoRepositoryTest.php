@@ -69,6 +69,7 @@ class TipoProdutoRepositoryTest extends TestCase
         $tipoProdutoModel->shouldReceive('all')
             ->andReturnUsing(function () {
                 $this->assertTrue(true);
+
                 return [];
             });
         $container->shouldReceive('get')->with('Jonaselias\ExpertFramework\Model\Produto\TipoProdutoModel')
@@ -90,6 +91,7 @@ class TipoProdutoRepositoryTest extends TestCase
 
         $tipoProdutoModel->shouldReceive('find')->with($id)->andReturnUsing(function () {
             $this->assertTrue(true);
+
             return [];
         });
         $container->shouldReceive('get')->with('Jonaselias\ExpertFramework\Model\Produto\TipoProdutoModel')
@@ -111,6 +113,7 @@ class TipoProdutoRepositoryTest extends TestCase
 
         $tipoProdutoModel->shouldReceive('destroy')->andReturnUsing(function () {
             $this->assertTrue(true);
+
             return true;
         });
         $container->shouldReceive('get')->with('Jonaselias\ExpertFramework\Model\Produto\TipoProdutoModel')
