@@ -4,6 +4,15 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.0.7](https://github.com/jonas-elias/mercado-software-expert/compare/v0.0.6...v0.0.7) (2023-10-26)
+
+### Builds
+
+* Config dependencies ([ece3e3](https://github.com/jonas-elias/mercado-software-expert/commit/ece3e3afc0cf0393c6d3f2a66bbf8a75e6b9a21f))
+
+
+---
+
 ## [0.0.6](https://github.com/jonas-elias/mercado-software-expert/compare/v0.0.5...v0.0.6) (2023-10-26)
 
 ### Code Refactoring
