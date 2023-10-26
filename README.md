@@ -53,17 +53,17 @@ Siga as etapas abaixo para configurar e executar o projeto:
 
 ## Qualidade de software 👌
 
-#### Testes
+#### Testes unitários (PHPUnit)
 ```php
 composer test
 ```
 
-#### PHPStan
+#### Análise de código (PHPStan)
 ```php
 composer analyse
 ```
 
-#### Versionamento automático
+#### Versionamento automático (Composer version)
 ```php
 composer generate-changelog
 ```
