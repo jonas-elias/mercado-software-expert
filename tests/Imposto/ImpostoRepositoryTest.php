@@ -25,6 +25,7 @@ class ImpostoRepositoryTest extends TestCase
 
         $impostoModel->shouldReceive('create')->with(['dados' => 'dados'])->andReturnUsing(function () {
             $this->assertTrue(true);
+
             return true;
         });
         $container->shouldReceive('get')->with('Jonaselias\ExpertFramework\Model\Imposto\ImpostoModel')
@@ -48,6 +49,7 @@ class ImpostoRepositoryTest extends TestCase
 
         $impostoModel->shouldReceive('update')->with(['dados' => 'dados'], $id)->andReturnUsing(function () {
             $this->assertTrue(true);
+
             return true;
         });
         $container->shouldReceive('get')->with('Jonaselias\ExpertFramework\Model\Imposto\ImpostoModel')

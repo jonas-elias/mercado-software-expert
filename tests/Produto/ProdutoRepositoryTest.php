@@ -78,7 +78,7 @@ class ProdutoRepositoryTest extends TestCase
             'p.nome',
             'p.descricao',
             'tp.id as id_tipo_produto',
-            'p.preco'
+            'p.preco',
         ])->andReturnUsing(function () use ($queryBuilder) {
             $this->assertTrue(true);
 

@@ -17,9 +17,9 @@ class TipoProdutoValidation extends Validator
      * @var array
      */
     protected array $rules = [
-        'nome' => 'required|string|max:255',
+        'nome'      => 'required|string|max:255',
         'descricao' => 'required|string|max:255',
-        'id' => 'required|notExists:tipo_produto,id',
+        'id'        => 'required|notExists:tipo_produto,id',
         'id_delete' => 'required|notExists:tipo_produto,id|exists:imposto,id_tipo_produto|exists:produto,id_tipo_produto',
     ];
 
@@ -35,7 +35,7 @@ class TipoProdutoValidation extends Validator
     public function validaInsercao(?array $atributos): void
     {
         $regras = [
-            'nome' => $this->rules['nome'],
+            'nome'      => $this->rules['nome'],
             'descricao' => $this->rules['descricao'],
         ];
 
@@ -59,9 +59,9 @@ class TipoProdutoValidation extends Validator
     public function validaAtualizacao(array $atributos, ?int $id): void
     {
         $regras = [
-            'nome' => $this->rules['nome'],
+            'nome'      => $this->rules['nome'],
             'descricao' => $this->rules['descricao'],
-            'id' => $this->rules['id'],
+            'id'        => $this->rules['id'],
         ];
 
         $this->validator->validate(array_merge($atributos, ['id' => $id]), $regras);
