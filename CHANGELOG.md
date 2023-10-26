@@ -4,6 +4,15 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.0.4](https://github.com/jonas-elias/mercado-software-expert/compare/v0.0.3...v0.0.4) (2023-10-26)
+
+### Bug Fixes
+
+* Validations itens venda ([ee6303](https://github.com/jonas-elias/mercado-software-expert/commit/ee6303c6d52c429b9607610c7eb0cafb6df4811b))
+
+
+---
+
 ## [0.0.3](https://github.com/jonas-elias/mercado-software-expert/compare/v0.0.2...v0.0.3) (2023-10-25)
 
 ### Bug Fixes

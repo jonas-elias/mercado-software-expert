@@ -21,7 +21,7 @@
         "phpunit/phpunit": "^10.4",
         "mockery/mockery": "^1.6"
     },
-    "version": "0.0.3",
+    "version": "0.0.4",
     "scripts": {
         "generate-changelog": [
             "php vendor/bin/conventional-changelog --commit"
