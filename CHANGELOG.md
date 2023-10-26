@@ -4,6 +4,19 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.0.8](https://github.com/jonas-elias/mercado-software-expert/compare/v0.0.7...v0.0.8) (2023-10-26)
+
+### Bug Fixes
+
+* Remove migration null file ([8c86bd](https://github.com/jonas-elias/mercado-software-expert/commit/8c86bd2555497fdee4c460eb8a23655e79786562))
+
+### Builds
+
+* Database dependency ([d2b3fd](https://github.com/jonas-elias/mercado-software-expert/commit/d2b3fd178913b5407fd8bc7586c20d0d7dee548b))
+
+
+---
+
 ## [0.0.7](https://github.com/jonas-elias/mercado-software-expert/compare/v0.0.6...v0.0.7) (2023-10-26)
 
 ### Builds
