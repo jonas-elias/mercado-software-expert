@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa1ee1fce5d78a93e66b19223fdcb4c6",
+    "content-hash": "606f90dba4a8726454db894955892871",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -197,16 +197,16 @@
         },
         {
             "name": "expert-framework/database",
-            "version": "v1.5.1",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonas-elias/expert-framework-database.git",
-                "reference": "cfc6ca3a90819752d651fce24bee8b37f0708b16"
+                "reference": "671477704d11a293f3a3ffa66cca5fa64162cddc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonas-elias/expert-framework-database/zipball/cfc6ca3a90819752d651fce24bee8b37f0708b16",
-                "reference": "cfc6ca3a90819752d651fce24bee8b37f0708b16",
+                "url": "https://api.github.com/repos/jonas-elias/expert-framework-database/zipball/671477704d11a293f3a3ffa66cca5fa64162cddc",
+                "reference": "671477704d11a293f3a3ffa66cca5fa64162cddc",
                 "shasum": ""
             },
             "require": {
@@ -230,9 +230,9 @@
             ],
             "support": {
                 "issues": "https://github.com/jonas-elias/expert-framework-database/issues",
-                "source": "https://github.com/jonas-elias/expert-framework-database/tree/v1.5.1"
+                "source": "https://github.com/jonas-elias/expert-framework-database/tree/1.6.0"
             },
-            "time": "2023-10-26T02:00:50+00:00"
+            "time": "2023-10-26T15:53:27+00:00"
         },
         {
             "name": "expert-framework/helpers",
@@ -272,16 +272,16 @@
         },
         {
             "name": "expert-framework/http",
-            "version": "3.2.1",
+            "version": "v3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonas-elias/expert-framework-http.git",
-                "reference": "4b658221f4404e0aa3b055747bd90b03ee89ed4a"
+                "reference": "ef66ab68ff3d812584829a8ea8844ef35d0a3c5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonas-elias/expert-framework-http/zipball/4b658221f4404e0aa3b055747bd90b03ee89ed4a",
-                "reference": "4b658221f4404e0aa3b055747bd90b03ee89ed4a",
+                "url": "https://api.github.com/repos/jonas-elias/expert-framework-http/zipball/ef66ab68ff3d812584829a8ea8844ef35d0a3c5d",
+                "reference": "ef66ab68ff3d812584829a8ea8844ef35d0a3c5d",
                 "shasum": ""
             },
             "type": "library",
@@ -302,9 +302,9 @@
             ],
             "support": {
                 "issues": "https://github.com/jonas-elias/expert-framework-http/issues",
-                "source": "https://github.com/jonas-elias/expert-framework-http/tree/3.2.1"
+                "source": "https://github.com/jonas-elias/expert-framework-http/tree/v3.3.1"
             },
-            "time": "2023-10-25T08:19:17+00:00"
+            "time": "2023-10-26T15:41:09+00:00"
         },
         {
             "name": "expert-framework/validation",
@@ -1633,16 +1633,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.4.1",
+            "version": "10.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "62bd7af13d282deeb95650077d28ba3600ca321c"
+                "reference": "cacd8b9dd224efa8eb28beb69004126c7ca1a1a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/62bd7af13d282deeb95650077d28ba3600ca321c",
-                "reference": "62bd7af13d282deeb95650077d28ba3600ca321c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/cacd8b9dd224efa8eb28beb69004126c7ca1a1a1",
+                "reference": "cacd8b9dd224efa8eb28beb69004126c7ca1a1a1",
                 "shasum": ""
             },
             "require": {
@@ -1714,7 +1714,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.4.1"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.4.2"
             },
             "funding": [
                 {
@@ -1730,7 +1730,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-10-08T05:01:11+00:00"
+            "time": "2023-10-26T07:21:45+00:00"
         },
         {
             "name": "psr/container",
