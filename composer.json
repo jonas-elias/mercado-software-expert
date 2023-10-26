@@ -28,6 +28,9 @@
         ],
         "analyse": [
             "vendor/bin/phpstan analyse ./src"
+        ],
+        "test": [
+            "vendor/bin/phpunit ./tests"
         ]
     },
     "require": {

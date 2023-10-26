@@ -51,8 +51,8 @@ class ImpostoRepository extends Repository
     public function getImpostos(): array
     {
         return $this->impostoModel::table('imposto as i')
-            ->join('tipo_produto as tp', 'i.id_tipo_produto', '=', 'tp.id')
             ->select(['i.id', 'i.valor', 'tp.nome'])
+            ->join('tipo_produto as tp', 'i.id_tipo_produto', '=', 'tp.id')
             ->get();
     }
 

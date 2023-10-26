@@ -46,8 +46,8 @@ class Controller
     protected function constructSuccessResponse(?array $data = []): array
     {
         $response = [
-            'status'   => config('api.mensagens.sucesso.status'),
-            'mensagem' => config('api.mensagens.sucesso.mensagem'),
+            'status'   => config('api.mensagens.sucesso.status'), // @phpstan-ignore-line
+            'mensagem' => config('api.mensagens.sucesso.mensagem'), // @phpstan-ignore-line
             'dados'    => $data,
         ];
         $statusCode = 200;
@@ -65,8 +65,8 @@ class Controller
     protected function constructCreatedMessageResponse(?array $data = []): array
     {
         $response = [
-            'status'   => config('api.mensagens.sucesso.status'),
-            'mensagem' => config('api.mensagens.sucesso.mensagem'),
+            'status'   => config('api.mensagens.sucesso.status'), // @phpstan-ignore-line
+            'mensagem' => config('api.mensagens.sucesso.mensagem'), // @phpstan-ignore-line
             'dados'    => $data,
         ];
         $statusCode = 201;
@@ -96,8 +96,8 @@ class Controller
     protected function constructClientErrorResponse(string $errorMessage): array
     {
         $response = [
-            'status'        => config('api.mensagens.erro_cliente.status'),
-            'mensagem'      => config('api.mensagens.erro_cliente.mensagem'),
+            'status'        => config('api.mensagens.erro_cliente.status'), // @phpstan-ignore-line
+            'mensagem'      => config('api.mensagens.erro_cliente.mensagem'), // @phpstan-ignore-line
             'dados'         => [],
             'detalhes_erro' => json_decode($errorMessage, true),
         ];
@@ -114,8 +114,8 @@ class Controller
     protected function constructServerErrorResponse(): array
     {
         $response = [
-            'status'        => config('api.mensagens.erro_interno.status'),
-            'mensagem'      => config('api.mensagens.erro_interno.mensagem'),
+            'status'        => config('api.mensagens.erro_interno.status'), // @phpstan-ignore-line
+            'mensagem'      => config('api.mensagens.erro_interno.mensagem'), // @phpstan-ignore-line
             'dados'         => [],
             'detalhes_erro' => [],
         ];

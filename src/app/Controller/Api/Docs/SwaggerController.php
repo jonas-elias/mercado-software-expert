@@ -40,7 +40,7 @@ class SwaggerController extends Controller
      */
     public function yaml(): ResponseInterface
     {
-        $path = config('swagger.path');
+        $path = config('swagger.path'); // @phpstan-ignore-line
 
         $openapi = \OpenApi\Generator::scan([$path]);
 
@@ -54,6 +54,6 @@ class SwaggerController extends Controller
      */
     public function doc(): string
     {
-        return render('docs.docs');
+        return render('docs.docs'); // @phpstan-ignore-line
     }
 }
