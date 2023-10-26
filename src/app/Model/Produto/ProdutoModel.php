@@ -22,11 +22,4 @@ class ProdutoModel extends BaseModel
      * @var array
      */
     protected static array $columns = ['*'];
-
-    /**
-     * @var array
-     */
-    protected static array $conditionEqual = [
-        'data_exclusao' => '0001-01-01',
-    ];
 }
