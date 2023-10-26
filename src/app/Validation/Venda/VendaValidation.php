@@ -17,7 +17,7 @@ class VendaValidation extends Validator
      * @var array
      */
     private array $rules = [
-        'total_impostos' => 'required|float',
+        'total_impostos' => 'nullable|float',
         'total_venda'    => 'required|float',
         'id'             => 'required|notExists:venda,id',
     ];

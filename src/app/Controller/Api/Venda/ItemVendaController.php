@@ -75,9 +75,8 @@ class ItemVendaController extends Controller
      *             @OA\Property(
      *                 property="itens_venda",
      *                 type="object",
-     *                 @OA\Property(
-     *                 property="itens_venda",
-     *                 type="object",
+     *                 type="array",
+     *                 @OA\Items(
      *                      @OA\Property(
      *                          property="id_produto",
      *                          description="Id do produto",
@@ -156,7 +155,7 @@ class ItemVendaController extends Controller
         $atributos = [
             'venda' => [
                 'total_impostos' => (float) ($body['venda']['total_impostos'] ?? null),
-                'total_venda'    => (float) ($body['venda']['total_venda'] ?? null),
+                'total_venda' => (float) ($body['venda']['total_venda'] ?? null),
             ],
         ];
 
