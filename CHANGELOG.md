@@ -4,6 +4,19 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.0.5](https://github.com/jonas-elias/mercado-software-expert/compare/v0.0.4...v0.0.5) (2023-10-26)
+
+### Bug Fixes
+
+* Remove data_exclusao input ([4c7ed5](https://github.com/jonas-elias/mercado-software-expert/commit/4c7ed52b43298bf82144d86621924a436dff37b0))
+
+### Tests
+
+* Module produto ([23b55d](https://github.com/jonas-elias/mercado-software-expert/commit/23b55d016698b962c46530bb8919865e3afa8eb7))
+
+
+---
+
 ## [0.0.4](https://github.com/jonas-elias/mercado-software-expert/compare/v0.0.3...v0.0.4) (2023-10-26)
 
 ### Bug Fixes
