@@ -3,7 +3,7 @@
 Este é um repositório que permite o cadastro de produtos, tipos de produtos, valores percentuais de imposto, registro de vendas e cálculos de impostos sobre os produtos adquiridos aplicados as regras de servidor.
 
 ## Bibliotecas desenvolvidas para o projeto
-O projeto desenvolvido utilizous-se de algumas bibliotecas desenvolvidas também por mim durante o desenvolvimento. Tomei a liberdade e criei uma espécie de SoftExpert Framework KKKKKKKKK
+O projeto desenvolvido utilizous-se de algumas bibliotecas desenvolvidas também por mim durante o desenvolvimento. Tomei a liberdade e criei uma espécie de SoftExpert Framework.
 
  Bibliotecas desenvolvidas e seus respectivos repositórios:
  - https://github.com/jonas-elias/expert-framework-database
@@ -13,21 +13,6 @@ O projeto desenvolvido utilizous-se de algumas bibliotecas desenvolvidas também
  - https://github.com/jonas-elias/expert-framework-container
 
 (sim, fiz do zero e estão todas publicadas no packagist 😎)
-
-## Testes
-```php
-composer test
-```
-
-## PHPStan
-```php
-composer analyse
-```
-
-## Versionamento automático
-```php
-composer generate-changelog
-```
 
 ## Recursos Principais 📦
 
@@ -40,7 +25,6 @@ composer generate-changelog
 - **Registro de Vendas:** Registre todas as vendas realizadas no mercado.
 
 - **Cálculos de Impostos:** O sistema automatiza o cálculo de impostos sobre os produtos adquiridos.
-
 
 ## Pré-requisitos 🛠️
 
@@ -66,6 +50,23 @@ Siga as etapas abaixo para configurar e executar o projeto:
 3. Inicie a aplicação:
    ```shell
    cd src/public/ && php -S 0.0.0.0:8000
+
+## Qualidade de software 👌
+
+#### Testes
+```php
+composer test
+```
+
+#### PHPStan
+```php
+composer analyse
+```
+
+#### Versionamento automático
+```php
+composer generate-changelog
+```
 
 ## Dúvidas 🤔
 Caso exista alguma dúvida sobre como instalar, utilizar ou gerenciar o projeto, entre em contato com o email: jonasdasilvaelias@gmail.com
