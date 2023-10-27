@@ -68,7 +68,7 @@ class ItemVendaValidation extends VendaValidation
                 'id_produto'    => $itemVenda['id_produto'] ?? null,
                 'valor_item'    => (float) ($itemVenda['valor_item'] ?? null),
                 'valor_imposto' => (float) ($itemVenda['valor_imposto'] ?? null),
-                'quantidade'    => (integer) ($itemVenda['quantidade'] ?? null),
+                'quantidade'    => (int) ($itemVenda['quantidade'] ?? null),
             ];
         }
 
