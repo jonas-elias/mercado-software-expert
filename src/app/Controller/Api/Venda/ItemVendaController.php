@@ -75,9 +75,10 @@ class ItemVendaController extends Controller
      *             @OA\Property(
      *                 property="itens_venda",
      *                 type="object",
-     *                 @OA\Property(
-     *                 property="itens_venda",
-     *                 type="object",
+     *                 type="array",
+     *
+     *                 @OA\Items(
+     *
      *                      @OA\Property(
      *                          property="id_produto",
      *                          description="Id do produto",

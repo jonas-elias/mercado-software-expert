@@ -460,7 +460,7 @@ class TipoProdutoController extends Controller
     public function deleteTipoProdutoById(int $id): ResponseInterface
     {
         try {
-            $this->tipoProdutoValidation->validaTipoProdutoById($id);
+            $this->tipoProdutoValidation->validaDeleteById($id);
             $this->tipoProdutoRepository->deletaTipoProdutoById($id);
 
             $response = $this->constructNoContentResponse();

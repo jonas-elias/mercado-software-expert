@@ -21,7 +21,8 @@ class ProdutoValidation extends Validator
         'descricao'       => 'required|string|max:255',
         'preco'           => 'required|float',
         'id_tipo_produto' => 'required|notExists:tipo_produto,id',
-        'id'              => 'required|notExists:produto,id|softDelete:tipo_produto,id,data_exclusao,0001-01-01',
+        'id'              => 'required|notExists:produto,id',
+        'id_delete'       => 'required|notExists:produto,id|exists:itens_venda,id_produto',
     ];
 
     /**
@@ -89,6 +90,28 @@ class ProdutoValidation extends Validator
     {
         $regras = [
             'id' => $this->rules['id'],
+        ];
+
+        $this->validator->validate(['id' => $id], $regras);
+
+        if ($this->validator->fails()) {
+            throw new \InvalidArgumentException(json_encode($this->validator->errors()));
+        }
+    }
+
+    /**
+     * Method to validate delete id product.
+     *
+     * @param int $id
+     *
+     * @throws \InvalidArgumentException
+     *
+     * @return void
+     */
+    public function validaDeleteById(?int $id): void
+    {
+        $regras = [
+            'id' => $this->rules['id_delete'],
         ];
 
         $this->validator->validate(['id' => $id], $regras);

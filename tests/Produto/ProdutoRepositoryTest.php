@@ -73,19 +73,18 @@ class ProdutoRepositoryTest extends TestCase
 
             return $queryBuilder;
         });
+        $queryBuilder->shouldReceive('select')->with([
+            'p.id',
+            'p.nome',
+            'p.descricao',
+            'tp.id as id_tipo_produto',
+            'p.preco',
+        ])->andReturnUsing(function () use ($queryBuilder) {
+            $this->assertTrue(true);
+
+            return $queryBuilder;
+        });
         $queryBuilder->shouldReceive('join')->with('tipo_produto as tp', 'p.id_tipo_produto', '=', 'tp.id')
-            ->andReturnUsing(function () use ($queryBuilder) {
-                $this->assertTrue(true);
-
-                return $queryBuilder;
-            });
-        $queryBuilder->shouldReceive('where')->with('p.data_exclusao', '=', '0001-01-01')
-            ->andReturnUsing(function () use ($queryBuilder) {
-                $this->assertTrue(true);
-
-                return $queryBuilder;
-            });
-        $queryBuilder->shouldReceive('where')->with('tp.data_exclusao', '=', '0001-01-01')
             ->andReturnUsing(function () use ($queryBuilder) {
                 $this->assertTrue(true);
 
@@ -141,18 +140,6 @@ class ProdutoRepositoryTest extends TestCase
 
                 return $queryBuilder;
             });
-        $queryBuilder->shouldReceive('where')->with('p.data_exclusao', '=', '0001-01-01')
-            ->andReturnUsing(function () use ($queryBuilder) {
-                $this->assertTrue(true);
-
-                return $queryBuilder;
-            });
-        $queryBuilder->shouldReceive('where')->with('tp.data_exclusao', '=', '0001-01-01')
-            ->andReturnUsing(function () use ($queryBuilder) {
-                $this->assertTrue(true);
-
-                return $queryBuilder;
-            });
         $queryBuilder->shouldReceive('where')->with('p.id', '=', $id)
             ->andReturnUsing(function () use ($queryBuilder) {
                 $this->assertTrue(true);
@@ -177,7 +164,7 @@ class ProdutoRepositoryTest extends TestCase
         $produtoModel = $this->createMockProdutoModel();
         $database = $this->createMockDatabase();
 
-        $produtoModel->shouldReceive('update')->andReturnUsing(function () {
+        $produtoModel->shouldReceive('destroy')->andReturnUsing(function () {
             $this->assertTrue(true);
 
             return true;

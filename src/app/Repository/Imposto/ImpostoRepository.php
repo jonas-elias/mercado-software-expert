@@ -51,9 +51,8 @@ class ImpostoRepository extends Repository
     public function getImpostos(): array
     {
         return $this->impostoModel::table('imposto as i')
-            ->join('tipo_produto as tp', 'i.id_tipo_produto', '=', 'tp.id')
             ->select(['i.id', 'i.valor', 'tp.nome'])
-            ->where('i.data_exclusao', '=', '0001-01-01')
+            ->join('tipo_produto as tp', 'i.id_tipo_produto', '=', 'tp.id')
             ->get();
     }
 
@@ -90,6 +89,6 @@ class ImpostoRepository extends Repository
      */
     public function deletaImpostoById(int $id): void
     {
-        $this->impostoModel::update(['data_exclusao' => date('Y-m-d H:i:s')], $id);
+        $this->impostoModel::destroy($id);
     }
 }

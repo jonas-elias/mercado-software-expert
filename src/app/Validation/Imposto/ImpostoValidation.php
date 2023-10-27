@@ -17,13 +17,9 @@ class ImpostoValidation extends Validator
      * @var array
      */
     protected array $rules = [
-        'valor' => 'required|float',
-        /**
-         * Id tipo produto é único na tabela de imposto, justificando a quantidade de validações.
-         */
-        'id_tipo_produto' => 'required|notExists:tipo_produto,id|softDelete:tipo_produto,id,data_exclusao,0001-01-01
-            |exists:imposto,id_tipo_produto',
-        'id' => 'required|notExists:imposto,id|softDelete:imposto,id,data_exclusao,0001-01-01',
+        'valor'           => 'required|float',
+        'id_tipo_produto' => 'required|notExists:tipo_produto,id|exists:imposto,id_tipo_produto',
+        'id'              => 'required|notExists:imposto,id',
     ];
 
     /**

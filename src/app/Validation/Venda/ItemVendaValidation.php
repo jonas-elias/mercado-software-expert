@@ -15,7 +15,7 @@ class ItemVendaValidation extends VendaValidation
      * @var array
      */
     protected array $rules = [
-        'valor_imposto' => 'required|float',
+        'valor_imposto' => 'nullable|float',
         'valor_item'    => 'required|float',
         'id_produto'    => 'required|notExists:produto,id',
         'id_venda'      => 'required|notExists:venda,id',

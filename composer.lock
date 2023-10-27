@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26a84a12d0f63b198ed87dc589b44cba",
+    "content-hash": "606f90dba4a8726454db894955892871",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -161,16 +161,16 @@
         },
         {
             "name": "expert-framework/container",
-            "version": "v1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonas-elias/expert-framework-container.git",
-                "reference": "304fa774084c5f0fa2de5043d4ec1a6b3d900adb"
+                "reference": "5c9a6544812a2447199ed76ee0b745cec63da5b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonas-elias/expert-framework-container/zipball/304fa774084c5f0fa2de5043d4ec1a6b3d900adb",
-                "reference": "304fa774084c5f0fa2de5043d4ec1a6b3d900adb",
+                "url": "https://api.github.com/repos/jonas-elias/expert-framework-container/zipball/5c9a6544812a2447199ed76ee0b745cec63da5b5",
+                "reference": "5c9a6544812a2447199ed76ee0b745cec63da5b5",
                 "shasum": ""
             },
             "type": "library",
@@ -191,22 +191,22 @@
             ],
             "support": {
                 "issues": "https://github.com/jonas-elias/expert-framework-container/issues",
-                "source": "https://github.com/jonas-elias/expert-framework-container/tree/v1.0.0"
+                "source": "https://github.com/jonas-elias/expert-framework-container/tree/1.1.0"
             },
-            "time": "2023-10-22T07:21:26+00:00"
+            "time": "2023-10-25T08:16:24+00:00"
         },
         {
             "name": "expert-framework/database",
-            "version": "v1.4.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonas-elias/expert-framework-database.git",
-                "reference": "c93942825806b642d0c790561c7d4f8bdaddae2c"
+                "reference": "671477704d11a293f3a3ffa66cca5fa64162cddc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonas-elias/expert-framework-database/zipball/c93942825806b642d0c790561c7d4f8bdaddae2c",
-                "reference": "c93942825806b642d0c790561c7d4f8bdaddae2c",
+                "url": "https://api.github.com/repos/jonas-elias/expert-framework-database/zipball/671477704d11a293f3a3ffa66cca5fa64162cddc",
+                "reference": "671477704d11a293f3a3ffa66cca5fa64162cddc",
                 "shasum": ""
             },
             "require": {
@@ -230,22 +230,22 @@
             ],
             "support": {
                 "issues": "https://github.com/jonas-elias/expert-framework-database/issues",
-                "source": "https://github.com/jonas-elias/expert-framework-database/tree/v1.4.0"
+                "source": "https://github.com/jonas-elias/expert-framework-database/tree/1.6.0"
             },
-            "time": "2023-10-25T04:52:21+00:00"
+            "time": "2023-10-26T15:53:27+00:00"
         },
         {
             "name": "expert-framework/helpers",
-            "version": "v2.1.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonas-elias/expert-framework-helpers.git",
-                "reference": "0211ccc0b2ff3cc35882febedf3e80f746fd1125"
+                "reference": "2ffe922ef9350b85cd5c549cbab822a9daac9f42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonas-elias/expert-framework-helpers/zipball/0211ccc0b2ff3cc35882febedf3e80f746fd1125",
-                "reference": "0211ccc0b2ff3cc35882febedf3e80f746fd1125",
+                "url": "https://api.github.com/repos/jonas-elias/expert-framework-helpers/zipball/2ffe922ef9350b85cd5c549cbab822a9daac9f42",
+                "reference": "2ffe922ef9350b85cd5c549cbab822a9daac9f42",
                 "shasum": ""
             },
             "type": "library",
@@ -266,22 +266,22 @@
             ],
             "support": {
                 "issues": "https://github.com/jonas-elias/expert-framework-helpers/issues",
-                "source": "https://github.com/jonas-elias/expert-framework-helpers/tree/v2.1.0"
+                "source": "https://github.com/jonas-elias/expert-framework-helpers/tree/v2.2.0"
             },
-            "time": "2023-10-24T02:29:39+00:00"
+            "time": "2023-10-25T08:19:58+00:00"
         },
         {
             "name": "expert-framework/http",
-            "version": "v3.2.0",
+            "version": "v3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonas-elias/expert-framework-http.git",
-                "reference": "cf05fc1fc8ed643b47789998cf2dfdd70bb4d0f0"
+                "reference": "ef66ab68ff3d812584829a8ea8844ef35d0a3c5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonas-elias/expert-framework-http/zipball/cf05fc1fc8ed643b47789998cf2dfdd70bb4d0f0",
-                "reference": "cf05fc1fc8ed643b47789998cf2dfdd70bb4d0f0",
+                "url": "https://api.github.com/repos/jonas-elias/expert-framework-http/zipball/ef66ab68ff3d812584829a8ea8844ef35d0a3c5d",
+                "reference": "ef66ab68ff3d812584829a8ea8844ef35d0a3c5d",
                 "shasum": ""
             },
             "type": "library",
@@ -302,22 +302,22 @@
             ],
             "support": {
                 "issues": "https://github.com/jonas-elias/expert-framework-http/issues",
-                "source": "https://github.com/jonas-elias/expert-framework-http/tree/v3.2.0"
+                "source": "https://github.com/jonas-elias/expert-framework-http/tree/v3.3.1"
             },
-            "time": "2023-10-25T05:25:04+00:00"
+            "time": "2023-10-26T15:41:09+00:00"
         },
         {
             "name": "expert-framework/validation",
-            "version": "v2.2.0",
+            "version": "v2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonas-elias/expert-framework-validation.git",
-                "reference": "76640a307fab7cbe4758fb0cb3f96051d3907d7a"
+                "reference": "6846f2556b1253224874b3636c03eade7fa90cd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonas-elias/expert-framework-validation/zipball/76640a307fab7cbe4758fb0cb3f96051d3907d7a",
-                "reference": "76640a307fab7cbe4758fb0cb3f96051d3907d7a",
+                "url": "https://api.github.com/repos/jonas-elias/expert-framework-validation/zipball/6846f2556b1253224874b3636c03eade7fa90cd3",
+                "reference": "6846f2556b1253224874b3636c03eade7fa90cd3",
                 "shasum": ""
             },
             "require": {
@@ -341,9 +341,9 @@
             ],
             "support": {
                 "issues": "https://github.com/jonas-elias/expert-framework-validation/issues",
-                "source": "https://github.com/jonas-elias/expert-framework-validation/tree/v2.2.0"
+                "source": "https://github.com/jonas-elias/expert-framework-validation/tree/v2.3.1"
             },
-            "time": "2023-10-24T05:33:30+00:00"
+            "time": "2023-10-26T02:05:26+00:00"
         },
         {
             "name": "psr/cache",
@@ -1633,16 +1633,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.4.1",
+            "version": "10.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "62bd7af13d282deeb95650077d28ba3600ca321c"
+                "reference": "cacd8b9dd224efa8eb28beb69004126c7ca1a1a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/62bd7af13d282deeb95650077d28ba3600ca321c",
-                "reference": "62bd7af13d282deeb95650077d28ba3600ca321c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/cacd8b9dd224efa8eb28beb69004126c7ca1a1a1",
+                "reference": "cacd8b9dd224efa8eb28beb69004126c7ca1a1a1",
                 "shasum": ""
             },
             "require": {
@@ -1714,7 +1714,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.4.1"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.4.2"
             },
             "funding": [
                 {
@@ -1730,7 +1730,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-10-08T05:01:11+00:00"
+            "time": "2023-10-26T07:21:45+00:00"
         },
         {
             "name": "psr/container",

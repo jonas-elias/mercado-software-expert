@@ -54,10 +54,8 @@ class ProdutoRepository extends Repository
     public function getProdutos(): array
     {
         return $this->produtoModel::table('produto as p')
-            ->select(['p.id', 'p.nome', 'p.descricao', 'tp.id as id_tipo_produto', 'p.preco', 'p.data_exclusao'])
+            ->select(['p.id', 'p.nome', 'p.descricao', 'tp.id as id_tipo_produto', 'p.preco'])
             ->join('tipo_produto as tp', 'p.id_tipo_produto', '=', 'tp.id')
-            ->where('p.data_exclusao', '=', '0001-01-01')
-            ->where('tp.data_exclusao', '=', '0001-01-01')
             ->get();
     }
 
@@ -96,8 +94,6 @@ class ProdutoRepository extends Repository
             ->join('tipo_produto as tp', 'p.id_tipo_produto', '=', 'tp.id')
             ->join('imposto as i', 'tp.id', '=', 'i.id_tipo_produto', 'LEFT JOIN')
             ->where('p.id', '=', $id)
-            ->where('p.data_exclusao', '=', '0001-01-01')
-            ->where('tp.data_exclusao', '=', '0001-01-01')
             ->get()[0] ?? [];
 
         return [$this->formatCasasDecimaisProduto($produto)];
@@ -112,6 +108,6 @@ class ProdutoRepository extends Repository
      */
     public function deletaProdutoById(int $id): void
     {
-        $this->produtoModel::update(['data_exclusao' => date('Y-m-d H:i:s')], $id);
+        $this->produtoModel::destroy($id);
     }
 }
