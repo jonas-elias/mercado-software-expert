@@ -20,6 +20,7 @@ class ItemVendaValidation extends VendaValidation
         'id_produto'    => 'required|notExists:produto,id',
         'id_venda'      => 'required|notExists:venda,id',
         'id'            => 'required|notExists:itens_venda,id',
+        'quantidade'    => 'required|integer',
     ];
 
     /**
@@ -39,6 +40,7 @@ class ItemVendaValidation extends VendaValidation
                 'valor_item'    => $this->rules['valor_item'],
                 'id_produto'    => $this->rules['id_produto'],
                 'id_venda'      => $this->rules['id_venda'],
+                'quantidade'    => $this->rules['quantidade'],
             ];
 
             $this->validator->validate($value, $regras);
@@ -66,6 +68,7 @@ class ItemVendaValidation extends VendaValidation
                 'id_produto'    => $itemVenda['id_produto'] ?? null,
                 'valor_item'    => (float) ($itemVenda['valor_item'] ?? null),
                 'valor_imposto' => (float) ($itemVenda['valor_imposto'] ?? null),
+                'quantidade'    => (integer) ($itemVenda['quantidade'] ?? null),
             ];
         }
 
